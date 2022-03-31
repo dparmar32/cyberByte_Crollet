@@ -15,7 +15,7 @@
 ## Description 📄
 
 ```md
-We are in a time where Crytocurrencies play a major role for our future development with some beneficial opportunity like transaction speed, transaction cost and easy access to a wide range. Crypto poppularity has been increasing drasticly the last couple of years creating such a great opportunity for investmet. We created cyberByte Crollet with the porpuse of making all these Cryptocurrencies information available to all our users. 
+We are in a time where Crytocurrencies play a major role in our future development with some beneficial opportunity like transaction speed, transaction cost and easy access to a wide range. Crypto poppularity has been increasing drasticly the last couple of years creating such a great opportunity for investmet. We created cyberByte Crollet with the porpuse of making all these Cryptocurrencies information available to all our users. 
 ```
 
 ## User Story 📖
@@ -46,22 +46,21 @@ Project Requirements were to to create a MERN stack single-page application that
 ```
 
 ## Deployment 🚀
-```md
+
 - [Github Repository](https://github.com/dparmar32/cyberByte_Crollet)
 - [Application Deployment]()
-```
+
 
 ## Wireframe 📝
-```md
+
 - [cyberByte Crollet Wireframe](https://app.diagrams.net/?src=about#G1Ru5vzWBgpHrougN5ilvdZCf4x_SYlmyg)
-```
+
 
 ## Contributing ❤
-```md
+
 ✉️ Contact us with any questions:
 - [Drashtee Parmar](https://github.com/dparmar32) 
 - [Shadae Brown](https://github.com/Shadae96)
 - [Silvia Trejo](https://github.com/sytrejo)
 - [Jonathan Sewell](https://github.com/jjsr17)
 - [Maria Cardona](https://github.com/mechas8703)
-```

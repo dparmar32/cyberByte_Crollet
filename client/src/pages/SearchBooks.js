@@ -24,14 +24,33 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
+  let api = `https://api.coincap.io/v2/assets/bitcoin/history?interval=d1`
+  
+
   const [saveBook, { error }] = useMutation(SAVE_BOOK);
+useEffect(()=>{
+  cryptoSearchApi();
+
+})
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
-    return () => saveBookIds(savedBookIds);
+    // return () => saveBookIds(savedBookIds);
+    return cryptoSearchApi();
   });
 
+  const cryptoSearchApi = async () => {
+    await setSearchInput('bitcoin');
+
+    fetch(api)
+    .then((res) => {
+      res.json
+    })
+    .then((data) => {
+      console.log(data.data)
+    })
+  } 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();

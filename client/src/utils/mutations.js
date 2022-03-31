@@ -24,32 +24,32 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_BOOK = gql`
-  mutation saveBook($bookData: BookInput!) {
-    saveBook(bookData: $bookData) {
+export const SAVE_COIN = gql`
+  mutation saveCoin($coinData: CoinInput!) {
+    saveCoin(coinData: $coinData) {
       _id
-      username
-      email
+      coinName
+      price
       savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+        coinId
+        coinName
+        symbol
+        price
+        priceChange
+        rank
       }
     }
   }
 `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
+export const REMOVE_COIN = gql`
+  mutation removeBook($coinId: ID!) {
+    removeBook(coinId: $coinId) {
       _id
       username
       email
       savedBooks {
-        bookId
+        coinId
         authors
         image
         description

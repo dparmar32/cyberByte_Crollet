@@ -9,9 +9,6 @@
 ![GitHub license](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
 
 
-
-
-
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
@@ -19,9 +16,7 @@
 - [Project Requierments](#project-requierments)
 - [Deployment](#deployment)
 - [Wireframe](#wireframe)
-- [Databases](#databases)
 - [Installation](#installation)
-- [References](#references)
 - [Contributing](#contributing)
 
 ## Description 📄
@@ -67,6 +62,12 @@ Project Requirements were to to create a MERN stack single-page application that
 
 - [cyberByte Crollet Wireframe](https://app.diagrams.net/?src=about#G1Ru5vzWBgpHrougN5ilvdZCf4x_SYlmyg)
 
+## Insatllation
+
+To install both client and server dependencies:
+```md
+npm run install
+```
 
 ## Contributing ❤
 

@@ -4,6 +4,8 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
+import Logo from '../logoproject3.png';
+
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
@@ -14,8 +16,7 @@ const AppNavbar = () => {
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Crypto Currency Search
+          <Navbar.Brand as={Link} to='/'><img src={Logo}  width="150" alt="logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>

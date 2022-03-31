@@ -92,7 +92,8 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Search for Books!</h1>
+          <h1>Welcome!</h1>
+          <h3>Search A Crypto Currencies:</h3>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -102,7 +103,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a book"
+                  placeholder="Search Currencies"
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -119,7 +120,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : 'Search for a New Crypto'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
@@ -160,3 +161,6 @@ const SearchBooks = () => {
 };
 
 export default SearchBooks;
+
+// This needs to be changed to be exported default SearchCrypto 
+// Also, we need to change the parameters to match the parameters of the Crypto API

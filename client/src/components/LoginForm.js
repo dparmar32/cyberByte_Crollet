@@ -108,3 +108,6 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+
+// Do we want to add more information for the registration form?

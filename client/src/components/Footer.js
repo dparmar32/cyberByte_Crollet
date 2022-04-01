@@ -5,9 +5,9 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaFolder } from "react-icons/fa";
 const AppFooter = () => {
     return (
         <>
-            <Container fluid className="text-light page-footer d-flex pt-3 bg-dark">
+            <Container fluid className="text-light page-footer fixed-bottom d-flex pt-1 bg-dark">
                 <Container>
-                    <h5 className='pt-4'>Contact Us</h5>
+                    <h5 className='pt-5'>Contact Us</h5>
                     <div className="d-lg-flex pb-4 justify-content-between">
                         <ul className="list-unstyled">
                             <li><h6>Maria Cardona</h6></li>

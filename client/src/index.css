@@ -15,3 +15,12 @@ h6 {
   font-weight: 300;
   font-style: italic;
 }
+
+.footer-link {
+  color:antiquewhite ;
+  font-size: 1rem;
+}
+
+.footer-link:hover {
+  color:rgb(11, 9, 129);
+}

@@ -90,7 +90,7 @@ const SearchBooks = () => {
   };
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron fluid className="gradient text-light">
         <Container>
           <h1>Welcome!</h1>
           <h3>Search A Crypto Currencies:</h3>

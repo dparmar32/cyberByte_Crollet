@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
+
+//change the connection to cyberbytes_crollet
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/cyberbytes_crollet', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

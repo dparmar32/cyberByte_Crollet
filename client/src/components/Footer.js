@@ -106,7 +106,7 @@ const AppFooter = () => {
                             </li>                            
                         </ul>
                     </div>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-around">
                         <p>&copy;{new Date().getFullYear()}</p>
                         <p>
                             <a className="footer-link" href="https://github.com/dparmar32/cyberByte_Crollet">

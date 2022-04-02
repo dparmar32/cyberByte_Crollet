@@ -24,6 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 
+// Update the information to match the params from the schema for coins
 export const SAVE_BOOK = gql`
   mutation saveBook($bookData: BookInput!) {
     saveBook(bookData: $bookData) {

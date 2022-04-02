@@ -22,13 +22,13 @@ const AppNavbar = () => {
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               <Nav.Link as={Link} to='/'>
-                Search For Books
+                Search For Crypto
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
-                    See Your Books
+                    See Your Cryptos
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
@@ -40,18 +40,18 @@ const AppNavbar = () => {
         </Container>
       </Navbar>
       {/* set modal data up */}
-      <Modal className="gradient2" bg='dark' variant='dark' expand='lg' defaultActiveKey='login'
+      <Modal className="gradient3" bg='dark' variant='dark' expand='lg' defaultActiveKey='login'
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
         <Tab.Container>
-          <Modal.Header closeButton>
+          <Modal.Header className="gradient2" bg='dark' variant='dark' expand='lg' closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link  defaultActiveKey='login' eventKey='login'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey='signup'>Sign Up</Nav.Link>

@@ -11,22 +11,56 @@ const coinSchema = new Schema({
     type: Number,
     required: true,
   },
-  // saved coin id from CoinCap ??
-  // check again for relationship with API and/or database
+
+  // check again for relationship with API and/or database (?)
   coinId: {
     type: Number,
     required: true,
   },
+
   symbol: {
     type: String,
   },
+
   priceUSD: {
     type: String,
   },
+
   explorer: {
     type: String,
     required: true,
   },
+
+  supply:{
+    type: Number,
+  },
+
+  maxSupply: {
+    type: Number,
+  },
+
+  marketCapUsd: {
+    type: Number,
+  },
+
+  volumeUsd24Hr: {
+    type: Number,
+  },
+
+  priceUsd: {
+    type: Number,
+  },
+  
+  changePercent24Hr: {
+    type: Number,
+  },
+
+  vwap24Hr: {
+    type: Number,
+  },
+
+
+
 });
 
 module.exports = coinSchema;

@@ -23,13 +23,20 @@ const typeDefs = gql`
     user: User
   }
 
-  input BookInput {
-    authors: [String]
-    description: String!
-    bookId: String!
-    image: String
-    link: String
-    title: String!
+  input coinInput {
+    id: [String]
+    rank: Number
+    coinId: Number
+    symbol: String
+    priceUSD: String
+    explorer: String
+    supply: Number
+    maxSupply: Number
+    marketCapUsd: Number
+    volumeUsd24Hr: Number
+    priceUsd: Number
+    changePercent24Hr: Number
+    vwap24Hr: Number
   }
 
   type Query {
@@ -39,9 +46,11 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(bookData: BookInput!): User
-    removeBook(bookId: ID!): User
+    savedCoins(coinData: coinInput!): User
+    removeCoin(coinId: ID!): User
   }
 `;
 
 module.exports = typeDefs;
+
+// changed bookinput to coininput review 

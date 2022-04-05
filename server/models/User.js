@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from Coin.js
-const bookSchema = require('./Coin');
+const coinSchema = require('./Coin');
 
 const userSchema = new Schema(
   {
@@ -48,6 +48,8 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+
+// I changed the bookCount to coinCount
 userSchema.virtual('coinCount').get(function () {
   return this.savedCoins.length;
 });

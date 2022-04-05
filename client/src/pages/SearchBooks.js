@@ -12,8 +12,10 @@ import {
 import { useMutation } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+// import { axios } from 'axios';
 
 import Auth from '../utils/auth';
+import Axios from 'axios'
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -24,14 +26,50 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
+
+  
+  async function pullfromApi(event){
+    event.preventDefault();
+    let api = `https://api.coincap.io/v2/assets/${searchInput}/history?interval=d1`
+    try {
+      const response = await fetch(api);
+      console.log("hello");
+    //   const request = await axios.get(api);
+    const {data} = await response.json()
+      console.log(data);
+    }catch(error){
+      console.log(error);
+    }
+  }
+  //const myArr = JSON.parse(api);
+
+  //console.log(api);
+  // make a fetch request to get data store it in state react
+  
   const [saveBook, { error }] = useMutation(SAVE_BOOK);
+// useEffect(()=>{
+  // cryptoSearchApi();
+
+// })
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  useEffect(() => {
-    return () => saveBookIds(savedBookIds);
-  });
+  // useEffect(() => {
+    // return () => saveBookIds(savedBookIds);
+    // return cryptoSearchApi();
+  // });
 
+  // const cryptoSearchApi = async () => {
+  //   await setSearchInput('bitcoin');
+
+  //   fetch(api)
+  //   .then((res) => {
+  //     res.json
+  //   })
+  //   .then((data) => {
+  //     console.log(data.data)
+  //   })
+  // } 
   // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -92,8 +130,8 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="gradient text-light">
         <Container>
-          <h1>Search for Books!</h1>
-          <Form onSubmit={handleFormSubmit}>
+          <h1>Search for Coin!</h1>
+          <Form onSubmit={pullfromApi}>
             <Form.Row>
               <Col xs={12} md={8}>
                 <Form.Control
@@ -102,7 +140,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a book"
+                  placeholder="Search for a coin"
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -119,7 +157,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
+            : 'Search for a coin to begin'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
@@ -145,8 +183,8 @@ const SearchBooks = () => {
                       onClick={() => handleSaveBook(book.bookId)}
                     >
                       {savedBookIds?.some((savedId) => savedId === book.bookId)
-                        ? 'Book Already Saved!'
-                        : 'Save This Book!'}
+                        ? 'Coi Already Saved!'
+                        : 'Save This Coin!'}
                     </Button>
                   )}
                 </Card.Body>

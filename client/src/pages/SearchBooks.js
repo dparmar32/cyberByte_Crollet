@@ -26,11 +26,10 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-
-  
   async function pullfromApi(event){
     event.preventDefault();
-    let api = `https://api.coincap.io/v2/assets/${searchInput}/history?interval=d1`
+    // let api = `https://api.coincap.io/v2/assets/${searchInput}/history?interval=d1`
+   let api = `https://api.coincap.io/v2/assets`
     try {
       const response = await fetch(api);
       console.log("hello");
@@ -88,16 +87,19 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
+       const coinData = items.map((coin) => ({
 
-      const bookData = items.map((book) => ({
-        bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
-      }));
+       }));
 
-      setSearchedBooks(bookData);
+      // const bookData = items.map((book) => ({
+      //   bookId: book.id,
+      //   authors: book.volumeInfo.authors || ['No author to display'],
+      //   title: book.volumeInfo.title,
+      //   description: book.volumeInfo.description,
+      //   image: book.volumeInfo.imageLinks?.thumbnail || '',
+      // }));
+
+      // setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
       console.error(err);

@@ -128,7 +128,7 @@ const SearchBooks = () => {
   };
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron fluid className="gradient text-light">
         <Container>
           <h1>Search for Coin!</h1>
           <Form onSubmit={pullfromApi}>

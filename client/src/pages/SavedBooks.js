@@ -14,6 +14,8 @@ import { removeBookId } from '../utils/localStorage';
 
 import Auth from '../utils/auth';
 
+import Cart from '../cart.png';
+
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
@@ -49,17 +51,17 @@ const SavedBooks = () => {
     <>
       <Jumbotron fluid className="gradient text-light">
         <Container>
-          <h1>Viewing {userData.username}'s books!</h1>
+          <h1>Viewing {userData.username}'s saved Cryptos!</h1>
         </Container>
       </Jumbotron>
       <Container>
-        <h2>
+        <h3>
           {userData.savedBooks?.length
-            ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? 'book' : 'books'
+            ? ` ${userData.savedBooks.length} saved ${
+                userData.savedBooks.length === 1 ? 'Crypto' : 'Cryptos'
               }:`
-            : 'You have no saved books!'}
-        </h2>
+            : 'You have no saved any Cryptos!'}
+        </h3>
         <CardColumns>
           {userData.savedBooks?.map((book) => {
             return (
@@ -75,12 +77,16 @@ const SavedBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
+                 <div class="btn-group" role="group" aria-label="Basic example">
                   <Button
-                    className="btn-block btn-danger"
-                    onClick={() => handleDeleteBook(book.bookId)}
-                  >
-                    Delete this Book!
+                    className="btn btn-danger btn-sm active"
+                    onClick={() => handleDeleteBook(book.bookId)}>                  
+                    Delete this Crypto!
                   </Button>
+                  <Button
+                  className='btn btn-info btn-sm active'><img src={Cart} width="60" alt="cart"></img> 
+                  </Button>
+                 </div>
                 </Card.Body>
               </Card>
             );

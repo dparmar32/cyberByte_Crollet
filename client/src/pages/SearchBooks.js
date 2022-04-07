@@ -140,7 +140,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a Crypto"
+                  placeholder="Search for Crypto"
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -157,7 +157,7 @@ const SearchBooks = () => {
         <h2>
           {searchedBooks.length
             ? `${searchedBooks.length} results:`
-            : 'Search for a Crypto to begin'}
+            : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {

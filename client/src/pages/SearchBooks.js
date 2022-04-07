@@ -130,7 +130,7 @@ const SearchBooks = () => {
     <>
       <Jumbotron fluid className="gradient text-light">
         <Container>
-          <h1>Search for Coin!</h1>
+          {/* <h1>Search for Crypto!</h1> */}
           <Form onSubmit={pullfromApi}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -140,7 +140,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a coin"
+                  placeholder="Search for a Crypto"
                 />
               </Col>
               <Col xs={12} md={4}>
@@ -156,8 +156,8 @@ const SearchBooks = () => {
       <Container>
         <h2>
           {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a coin to begin'}
+            ? `${searchedBooks.length} results:`
+            : 'Search for a Crypto to begin'}
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {

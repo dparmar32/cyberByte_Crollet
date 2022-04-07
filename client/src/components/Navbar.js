@@ -5,6 +5,7 @@ import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
 import Logo from '../logoproject3.png';
+import Cart from '../cart.png';
 
 import Auth from '../utils/auth';
 
@@ -47,7 +48,7 @@ const AppNavbar = () => {
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
         <Tab.Container>
-          <Modal.Header className="gradient2" bg='dark' variant='dark' expand='lg' closeButton>
+          <Modal.Header className="gradient" bg='dark' variant='dark' expand='lg' closeButton>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>

@@ -42,6 +42,8 @@ const AppNavbar = () => {
                 )}
 
               {/* Cart link   */}
+              <Nav as={Link} to='/Cart'><img src={Cart}  width="100" alt="cart"/>
+              </Nav>
 
             </Nav>
           </Navbar.Collapse>

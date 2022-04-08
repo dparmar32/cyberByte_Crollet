@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, NavbarBrand } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
@@ -17,8 +17,9 @@ const AppNavbar = () => {
     <>
       <Navbar  className="gradient" bg='dark' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'><img src={Logo}  width="150" alt="logo"/>
+          <Navbar.Brand as={Link} to='/'><img src={Logo} width="150" alt="logo"/>
           </Navbar.Brand>
+          <Navbar className="logoname">CyberByte Crollet</Navbar>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>        

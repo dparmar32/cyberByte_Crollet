@@ -30,7 +30,7 @@ const SearchBooks = () => {
   
   async function pullfromApi(event){
     event.preventDefault();
-    let api = `https://api.coincap.io/v2/assets/${searchInput}/history?interval=d1`
+    let api = `https://api.coincap.io/v2/assets`
     try {
       const response = await fetch(api);
       console.log("hello");

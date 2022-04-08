@@ -1,5 +1,6 @@
 const db = require('../config/connection');
 const { User } = require('../models');
+<<<<<<< HEAD
 // uncommented out profileSeeds
 const profileSeeds = require('./profileSeeds.json');
 const coinSeeds = require('./coinSeeds.json');
@@ -20,4 +21,18 @@ db.once('open', async () => {
   } catch (err) {
     throw err;
   }
+=======
+const userSeeds = require('./userSeeds.json');
+
+db.once('open', async () => {
+    try {
+        await User.deleteMany({});
+        await User.create(userSeeds);
+
+        console.log('all done!');
+        process.exit(0);
+    } catch (err) {
+        throw err;
+    }
+>>>>>>> 9a0dc8349577446873f7f9e6b5365421e2c7855e
 });

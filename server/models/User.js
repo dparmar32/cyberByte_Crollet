@@ -6,7 +6,7 @@ const coinSchema = require('./Coin');
 
 const userSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
       required: true,
       unique: true,

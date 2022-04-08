@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="" />
+    <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="Gradient color for the project">
+      <change afterPath="$PROJECT_DIR$/server/seeders/seed.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/seeders/userSeeds.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/SavedBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SavedBooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/SearchBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SearchBooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/connection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/schemas/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/schemas/resolvers.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/client/src/components/Navbar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/schemas/typeDefs.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/pages/SearchBooks.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/components/SignupForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/components/LoginForm.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/utils/mutations.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/server.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="275C1UrnRfONI2bji594sA9nLkE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648600345964</updated>
       <workItem from="1648600348707" duration="1139000" />
+      <workItem from="1649380636996" duration="318000" />
     </task>
     <servers />
   </component>

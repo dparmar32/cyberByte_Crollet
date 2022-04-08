@@ -47,6 +47,7 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
+<<<<<<< HEAD
 
 
     removeProfile: async (parent, { profileId }) => {
@@ -58,6 +59,34 @@ const resolvers = {
         { new: true }
       );
     },
+=======
+    // saveBook: async (parent, { bookData }, context) => {
+    //   if (context.user) {
+    //     const updatedUser = await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { savedBooks: bookData } },
+    //       { new: true }
+    //     );
+    //
+    //     return updatedUser;
+    //   }
+    //
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+    // removeBook: async (parent, { bookId }, context) => {
+    //   if (context.user) {
+    //     const updatedUser = await User.findOneAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { savedBooks: { bookId } } },
+    //       { new: true }
+    //     );
+    //
+    //     return updatedUser;
+    //   }
+    //
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+>>>>>>> 9a0dc8349577446873f7f9e6b5365421e2c7855e
   },
   // Mutation: {
   //   addUser: async (parent, args) => {

@@ -3,12 +3,16 @@ body {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Rubik', sans-serif;
+}
+
+h2 {
+   font-size: 40px;
+   font-weight: bold;
 }
 
 .small {
@@ -17,27 +21,26 @@ h6 {
 }
 
 .gradient  {
-
-
   background: #43C6AC;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  position: relative;
 }
 
-.gradient2 {
-  background: #000428;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.gradient3 {
+background: #1c92d2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6de9b9, #389dd3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6de9b9, #389dd3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+position: absolute;
+bottom: 0;
 
-}
+   }
 
 
 .fluid {
   background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
 
 }
-
 
 .footer-link {
   color:antiquewhite ;

@@ -9,7 +9,7 @@ import Auth from '../utils/auth';
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
   });
@@ -54,7 +54,7 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: '',
+      name: '',
       email: '',
       password: '',
     });
@@ -75,17 +75,17 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Label htmlFor="name">Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your username"
-            name="username"
+            placeholder="Your name"
+            name="name"
             onChange={handleInputChange}
-            value={userFormData.username}
+            value={userFormData.name}
             required
           />
           <Form.Control.Feedback type="invalid">
-            Username is required!
+            Name is required!
           </Form.Control.Feedback>
         </Form.Group>
 
@@ -121,7 +121,7 @@ const SignupForm = () => {
         <Button
           disabled={
             !(
-              userFormData.username &&
+              userFormData.name &&
               userFormData.email &&
               userFormData.password
             )

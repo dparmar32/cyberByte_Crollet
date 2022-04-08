@@ -10,8 +10,8 @@ import {
 } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
-import { SAVE_BOOK } from '../utils/mutations';
-import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+// import { SAVE_BOOK } from '../utils/mutations';
+// import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 // import { axios } from 'axios';
 
 import Auth from '../utils/auth';
@@ -24,7 +24,7 @@ const SearchBooks = () => {
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved bookId values
-  const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
+  // const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
 
   
@@ -46,7 +46,7 @@ const SearchBooks = () => {
   //console.log(api);
   // make a fetch request to get data store it in state react
   
-  const [saveBook, { error }] = useMutation(SAVE_BOOK);
+  // const [saveBook, { error }] = useMutation(SAVE_BOOK);
 // useEffect(()=>{
   // cryptoSearchApi();
 
@@ -116,15 +116,15 @@ const SearchBooks = () => {
       return false;
     }
 
-    try {
-      const { data } = await saveBook({
-        variables: { bookData: { ...bookToSave } },
-      });
-      console.log(savedBookIds);
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-    } catch (err) {
-      console.error(err);
-    }
+    // try {
+    //   const { data } = await saveBook({
+    //     variables: { bookData: { ...bookToSave } },
+    //   });
+    //   console.log(savedBookIds);
+    //   setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+    // } catch (err) {
+    //   console.error(err);
+    // }
   };
   return (
     <>
@@ -174,19 +174,19 @@ const SearchBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
-                  {Auth.loggedIn() && (
-                    <Button
-                      disabled={savedBookIds?.some(
-                        (savedId) => savedId === book.bookId
-                      )}
-                      className="btn-block btn-info"
-                      onClick={() => handleSaveBook(book.bookId)}
-                    >
-                      {savedBookIds?.some((savedId) => savedId === book.bookId)
-                        ? 'Coi Already Saved!'
-                        : 'Save This Coin!'}
-                    </Button>
-                  )}
+                  {/*{Auth.loggedIn() && (*/}
+                  {/*  <Button*/}
+                  {/*    disabled={savedBookIds?.some(*/}
+                  {/*      (savedId) => savedId === book.bookId*/}
+                  {/*    )}*/}
+                  {/*    className="btn-block btn-info"*/}
+                  {/*    onClick={() => handleSaveBook(book.bookId)}*/}
+                  {/*  >*/}
+                  {/*    {savedBookIds?.some((savedId) => savedId === book.bookId)*/}
+                  {/*      ? 'Coi Already Saved!'*/}
+                  {/*      : 'Save This Coin!'}*/}
+                  {/*  </Button>*/}
+                  {/*)}*/}
                 </Card.Body>
               </Card>
             );

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import {gql} from '@apollo/client';
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -24,27 +24,18 @@ export const ADD_USER = gql`
   }
 `;
 
-// Update the information to match the params from the schema for coins
 export const SAVE_COIN = gql`
-  mutation saveCoin($coinData: coinInput!) {
+  mutation saveCoin($coinData: CoinInput!) {
     saveCoin(coinData: $coinData) {
       _id
-      username
+      name
       email
       savedCoins {
         coinId
         rank
-        symbol
-        priceUSD
-        explorer
-        supply
-        maxSupply
-        marketCapUsd
-        volumeUsd24Hr
+        Symbol
+        name
         priceUsd
-        changePercent24Hr
-        vwap24HR
-        link
       }
     }
   }
@@ -59,17 +50,9 @@ export const REMOVE_COIN = gql`
       savedCoins {
         coinId
         rank
-        symbol
-        priceUSD
-        explorer
-        supply
-        maxSupply
-        marketCapUsd
-        volumeUsd24Hr
+        Symbol
+        name
         priceUsd
-        changePercent24Hr
-        vwap24HR
-        link
       }
     }
   }

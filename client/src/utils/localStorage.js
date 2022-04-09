@@ -6,9 +6,9 @@ export const getSavedCoinIds = () => {
   return savedCoinIds;
 };
 
-export const saveCoinIds = (CoinIdArr) => {
-  if (CoinIdArr.length) {
-    localStorage.setItem('saved_coins', JSON.stringify(CoinIdArr));
+export const saveCoinIds = (coinIdArr) => {
+  if (coinIdArr.length) {
+    localStorage.setItem('saved_coins', JSON.stringify(coinIdArr));
   } else {
     localStorage.removeItem('saved_coins');
   }

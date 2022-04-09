@@ -1,8 +1,9 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
-const { signToken } = require('../utils/auth');
+const {AuthenticationError} = require('apollo-server-express');
+const {User} = require('../models');
+const {signToken} = require('../utils/auth');
 
 const resolvers = {
+<<<<<<< HEAD
   Query: {
     profiles: async () => {
       return User.find();
@@ -17,14 +18,21 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+=======
+    Query: {
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({_id: context.user._id}).select('-__v -password');
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
 
-        return userData;
-      }
+                return userData;
+            }
 
-      throw new AuthenticationError('Not logged in');
+            throw new AuthenticationError('Not logged in');
+        },
     },
-  },
 
+<<<<<<< HEAD
   Mutation: {
     addProfile: async (parent, { name, email, password }) => {
       const profile = await User.create({ name, email, password });
@@ -119,22 +127,29 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
+=======
+    Mutation: {
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+            const token = signToken(user);
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
 
-      return { token, user };
-    },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+            return {token, user};
+        },
+        login: async (parent, {email, password}) => {
+            const user = await User.findOne({email});
 
-      if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
+            if (!user) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
 
-      const correctPw = await user.isCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
 
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
 
+<<<<<<< HEAD
       const token = signToken(user);
       return { token, user };
     },
@@ -166,5 +181,38 @@ const resolvers = {
     },
   },
 },
+=======
+            const token = signToken(user);
+            return {token, user};
+        },
+        saveCoin: async (parent, {coinData}, context) => {
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    {_id: context.user._id},
+                    {$push: {savedCoins: coinData}},
+                    {new: true}
+                );
+
+                return updatedUser;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        },
+        removeCoin: async (parent, {coinId}, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {savedCoins: {coinId}}},
+                    {new: true}
+                );
+
+                return updatedUser;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
+        },
+    },
+};
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
 
 module.exports = resolvers

@@ -11,11 +11,18 @@ const typeDefs = gql`
 
   type Coin {
     coinId: ID!
+<<<<<<< HEAD
     authors: [String]
     description: String
     image: String
     link: String
     title: String!
+=======
+    rank: Int
+    Symbol: String
+    name: String
+    priceUsd: String
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
   }
 
   type Auth {
@@ -23,6 +30,7 @@ const typeDefs = gql`
     user: User
   }
 
+<<<<<<< HEAD
   input coinInput {
     id: [String]
     rank: Number
@@ -37,6 +45,14 @@ const typeDefs = gql`
     priceUsd: Number
     changePercent24Hr: Number
     vwap24Hr: Number
+=======
+  input CoinInput {
+    rank: String
+    Symbol: String!
+    coinId: String!
+    priceUsed: String
+    name: String!
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
   }
 
   type Query {
@@ -51,9 +67,14 @@ const typeDefs = gql`
     removeCoin(coinId: ID!): User
 =======
     addUser(name: String!, email: String!, password: String!): Auth
+<<<<<<< HEAD
     saveBook(bookData: BookInput!): User
     removeBook(bookId: ID!): User
 >>>>>>> 41927253eaffb3ab2963cc642f1ac3ec3cee14d7
+=======
+    saveCoin(coinData: CoinInput!): User
+    removeCoin(coinId: ID!): User
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
   }
 `;
 

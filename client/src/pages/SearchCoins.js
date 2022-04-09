@@ -91,7 +91,7 @@ const SearchCoins = () => {
             const response = await fetch(
                 // `https://www.googleapis.com/coins/v1/volumes?q=${searchInput}`
                 // `api.coincap.io/v2/assets/?q=${{id}}`
-                `https://api.coincap.io/v2/assets/?${searchInput}`
+                `https://api.coincap.io/v2/assets?search=${searchInput}`
             );
 
             if (!response.ok) {
@@ -197,7 +197,7 @@ const SearchCoins = () => {
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: ${coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small">Explorer: {coin.explorer}</p>
+                                    <p className="small">Explorer: <a href={coin.explorer}>Link</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
                                       <Button

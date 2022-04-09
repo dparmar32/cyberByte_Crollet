@@ -25,38 +25,52 @@ export const ADD_USER = gql`
 `;
 
 // Update the information to match the params from the schema for coins
-export const SAVE_BOOK = gql`
-  mutation saveBook($bookData: BookInput!) {
-    saveBook(bookData: $bookData) {
+export const SAVE_COIN = gql`
+  mutation saveCoin($coinData: coinInput!) {
+    saveCoin(coinData: $coinData) {
       _id
       username
       email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
+      savedCoins {
+        coinId
+        rank
+        symbol
+        priceUSD
+        explorer
+        supply
+        maxSupply
+        marketCapUsd
+        volumeUsd24Hr
+        priceUsd
+        changePercent24Hr
+        vwap24HR
         link
       }
     }
   }
 `;
 
-// export const REMOVE_BOOK = gql`
-//   mutation removeBook($bookId: ID!) {
-//     removeBook(bookId: $bookId) {
-//       _id
-//       name
-//       email
-//       savedBooks {
-//         bookId
-//         authors
-//         image
-//         description
-//         title
-//         link
-//       }
-//     }
-//   }
-// `;
+export const REMOVE_COIN = gql`
+  mutation removeCoin($coinId: ID!) {
+    removeCoin(coinId: $coinId) {
+      _id
+      name
+      email
+      savedCoins {
+        coinId
+        rank
+        symbol
+        priceUSD
+        explorer
+        supply
+        maxSupply
+        marketCapUsd
+        volumeUsd24Hr
+        priceUsd
+        changePercent24Hr
+        vwap24HR
+        link
+      }
+    }
+  }
+`;

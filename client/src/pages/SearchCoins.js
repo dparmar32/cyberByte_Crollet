@@ -10,22 +10,21 @@ import {
 } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
-// import { SAVE_BOOK } from '../utils/mutations';
-// import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-// import { axios } from 'axios';
+import { SAVE_COIN } from '../utils/mutations';
+import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
+import { axios } from 'axios';
 
 import Auth from '../utils/auth';
 import Axios from 'axios'
 
-const SearchBooks = () => {
+const SearchCoins = () => {
   // create state for holding returned google api data
-  const [searchedBooks, setSearchedBooks] = useState([]);
+  const [searchedCoins, setSearchedCoins] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
   // create state to hold saved bookId values
-  // const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
-
+  const [savedCoinIds, setSavedCoinIds] = useState(getSavedCoinIds());
 
   
   async function pullfromApi(event){
@@ -41,23 +40,23 @@ const SearchBooks = () => {
       console.log(error);
     }
   }
-  //const myArr = JSON.parse(api);
+  const myArr = JSON.parse(api);
 
-  //console.log(api);
+  console.log(api);
   // make a fetch request to get data store it in state react
   
-  // const [saveBook, { error }] = useMutation(SAVE_BOOK);
-// useEffect(()=>{
-  // cryptoSearchApi();
+  const [saveCoin, { error }] = useMutation(SAVE_COIN);
+useEffect(()=>{
+  cryptoSearchApi();
 
-// })
+})
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  // useEffect(() => {
-    // return () => saveBookIds(savedBookIds);
-    // return cryptoSearchApi();
-  // });
+  useEffect(() => {
+    return () => saveCoinIds(savedCoinIds);
+    return cryptoSearchApi();
+  });
 
   // const cryptoSearchApi = async () => {
   //   await setSearchInput('bitcoin');
@@ -80,7 +79,7 @@ const SearchBooks = () => {
 
     try {
       const response = await fetch(
-        `https://api.coincap.io/v2/assets``
+        `https://api.coincap.io/v2/assets`
       );
 
       if (!response.ok) {
@@ -89,15 +88,11 @@ const SearchBooks = () => {
 
       const { items } = await response.json();
 
-      const bookData = items.map((book) => ({
-        bookId: book.id,
-        authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
+      const coinData = items.map((coin) => ({
+        coinId: coin.id,
       }));
 
-      setSearchedBooks(bookData);
+      setSearchedCoins(coinData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
@@ -105,9 +100,9 @@ const SearchBooks = () => {
   };
 
   // create function to handle saving a book to our database
-  const handleSaveBook = async (bookId) => {
-    // find the book in `searchedBooks` state by the matching id
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+  const handleSaveCoin = async (coinId) => {
+    // find the book in `searchedCoins` state by the matching id
+    const coinToSave = searchedCoins.find((coin) => coin.coinId === coinId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -116,15 +111,15 @@ const SearchBooks = () => {
       return false;
     }
 
-    // try {
-    //   const { data } = await saveBook({
-    //     variables: { bookData: { ...bookToSave } },
-    //   });
-    //   console.log(savedBookIds);
-    //   setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-    // } catch (err) {
-    //   console.error(err);
-    // }
+    try {
+      const { data } = await saveCoin({
+        variables: { coinData: { ...coinToSave } },
+      });
+      console.log(savedCoinIds);
+      setSavedCoinIds([...savedCoinIds, coinToSave.coinId]);
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <>
@@ -155,21 +150,21 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `${searchedBooks.length} results:`
+          {searchedCoins.length
+            ? `${searchedCoins.length} results:`
             : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedCoins.map((coin) => {
             return (
-              <Card key={book.bookId} border="dark">
-                {book.image ? (
+              <Card key={coin.coinId} border="dark">
+                {/* {book.image ? (
                   <Card.Img
                     src={book.image}
                     alt={`The cover for ${book.title}`}
                     variant="top"
                   />
-                ) : null}
+                ) : null} */}
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>

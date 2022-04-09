@@ -16,7 +16,7 @@ import Auth from '../utils/auth';
 
 import Cart from '../cart.png';
 
-const SavedCoinss = () => {
+const SavedCoins = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeCoin, { error }] = useMutation(REMOVE_COIN);
 

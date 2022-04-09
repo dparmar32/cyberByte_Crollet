@@ -12,10 +12,10 @@ import {
 import { useMutation } from '@apollo/client';
 import { SAVE_COIN } from '../utils/mutations';
 import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
-import { axios } from 'axios';
+// import { axios } from 'axios';
 
 import Auth from '../utils/auth';
-import Axios from 'axios'
+
 
 const SearchCoins = () => {
   // create state for holding returned google api data
@@ -40,23 +40,19 @@ const SearchCoins = () => {
       console.log(error);
     }
   }
-  const myArr = JSON.parse(api);
 
-  console.log(api);
-  // make a fetch request to get data store it in state react
-  
-  const [saveCoin, { error }] = useMutation(SAVE_COIN);
-useEffect(()=>{
-  cryptoSearchApi();
-
-})
+// make a fetch request to get data store it in state react
+//   const [saveCoin, { error }] = useMutation(SAVE_COIN);
+// useEffect(()=>{
+//   pullfromApi();
+// })
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-  useEffect(() => {
-    return () => saveCoinIds(savedCoinIds);
-    return cryptoSearchApi();
-  });
+  // useEffect(() => {
+  //   return () => saveCoinIds(savedCoinIds);
+  //   return pullfromApi();
+  // });
 
   // const cryptoSearchApi = async () => {
   //   await setSearchInput('bitcoin');
@@ -166,9 +162,9 @@ useEffect(()=>{
                   />
                 ) : null} */}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  {/* <Card.Title>{coin.coinId}</Card.Title>
+                  <p className="small">Rank: {coin.rank}</p>
+                  <Card.Text>{coin.explorer}</Card.Text> */}
                   {/*{Auth.loggedIn() && (*/}
                   {/*  <Button*/}
                   {/*    disabled={savedBookIds?.some(*/}
@@ -192,7 +188,7 @@ useEffect(()=>{
   );
 };
 
-export default SearchBooks;
+export default SearchCoins;
 
 // This needs to be changed to be exported default SearchCrypto 
 // Also, we need to change the parameters to match the parameters of the Crypto API

@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="Gradient color for the project">
-      <change afterPath="$PROJECT_DIR$/client/src/pages/SavedCoin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/SearchCoins.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/Coin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SavedBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SavedBooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SearchBooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SearchBooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/localStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/localStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/mutations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/schemas/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/schemas/resolvers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/schemas/typeDefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/schemas/typeDefs.js" afterDir="false" />
-    </list>
+    <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="Gradient color for the project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +62,7 @@
       <updated>1648600345964</updated>
       <workItem from="1648600348707" duration="1139000" />
       <workItem from="1649380636996" duration="318000" />
-      <workItem from="1649436540300" duration="14864000" />
+      <workItem from="1649436540300" duration="15602000" />
     </task>
     <servers />
   </component>
@@ -109,7 +97,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/client/src/pages/SearchCoins.js</url>
-          <line>105</line>
+          <line>102</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

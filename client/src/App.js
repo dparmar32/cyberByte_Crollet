@@ -10,7 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 
 // import SearchBooks from './pages/SearchBooks';
 import SearchCoins from './pages/SearchCoins';
-import SavedBooks from './pages/SavedBooks';
+import SavedCoins from './pages/SaveCoins';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 

@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import {gql} from '@apollo/client';
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -6,55 +6,57 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        username
+        name
       }
     }
   }
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($name: String!, $email: String!, $password: String!) {
+    addUser(name: $name, email: $email, password: $password) {
       token
       user {
         _id
-        username
+        name
       }
     }
   }
 `;
 
-export const SAVE_BOOK = gql`
-  mutation saveBook($bookData: BookInput!) {
-    saveBook(bookData: $bookData) {
+export const SAVE_COIN = gql`
+  mutation saveCoin($coinData: CoinInput!) {
+    saveCoin(coinData: $coinData) {
       _id
-      username
+      name
       email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      savedCoins {
+        coinId
+        rank
+        Symbol
+        name
+        priceUsd
+        changePercent24Hr
+        explorer
       }
     }
   }
 `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
+export const REMOVE_COIN = gql`
+  mutation removeCoin($coinId: ID!) {
+    removeCoin(coinId: $coinId) {
       _id
-      username
+      name
       email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      savedCoins {
+        coinId
+        rank
+        Symbol
+        name
+        priceUsd
+        changePercent24Hr
+        explorer
       }
     }
   }

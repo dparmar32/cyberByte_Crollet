@@ -14,7 +14,9 @@ const typeDefs = gql`
     rank: Int
     Symbol: String
     name: String
-    priceUsd: String
+    priceUsd: Int
+    changePercent24Hr: Int
+    explorer: String
   }
 
   type Auth {
@@ -26,8 +28,10 @@ const typeDefs = gql`
     rank: String
     Symbol: String!
     coinId: String!
-    priceUsed: String
+    priceUsd: Int!
     name: String!
+    changePercent24Hr: Int
+    explorer: String
   }
 
   type Query {

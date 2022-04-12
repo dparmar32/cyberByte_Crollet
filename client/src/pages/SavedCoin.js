@@ -18,7 +18,7 @@ import Cart from '../cart.png';
 
 const SavedCoins = () => {
     const { loading, data } = useQuery(QUERY_ME);
-    // const [removeCoin, { error }] = useMutation(REMOVE_COIN);
+    const [removeCoin, { error }] = useMutation(REMOVE_COIN);
 
     const userData = data?.me || {};
 
@@ -30,17 +30,17 @@ const SavedCoins = () => {
         if (!token) {
             return false;
         }
-        //
-        // try {
-        //   const { data } = await removeCoin({
-        //     variables: { coinId },
-        //   });
-        //
-        //   // upon success, remove coin's id from localStorage
-        //   removeCoinId(coinId);
-        // } catch (err) {
-        //   console.error(err);
-        // }
+        
+        try {
+          const { data } = await removeCoin({
+            variables: { coinId },
+          });
+        
+          // upon success, remove coin's id from localStorage
+          removeCoinId(coinId);
+        } catch (err) {
+          console.error(err);
+        }
     };
 
     if (loading) {
@@ -57,7 +57,7 @@ const SavedCoins = () => {
             <Container>
                 <h3>
                     {userData.savedCoins?.length
-                        ? ` ${userData.savedCoins.length} saved ${
+                        ? ` Viewing ${userData.savedCoins.length} saved ${
                             userData.savedCoins.length === 1 ? 'Crypto' : 'Cryptos'
                         }:`
                         : 'You have no saved any Cryptos!'}

@@ -6,6 +6,15 @@ export const QUERY_ME = gql`
       _id
       name
       email
+      savedCoins {
+        coinId
+        rank
+        Symbol
+        name
+        priceUsd
+        changePercent24Hr
+        explorer
+      }
     }
   }
 `;

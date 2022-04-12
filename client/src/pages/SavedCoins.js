@@ -66,16 +66,20 @@ const SavedCoins = () => {
                     {userData.savedCoins?.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
-                                {coin.image ? (
+                                {coin.symbol ? (
                                     <Card.Img
-                                        src={coin.image}
-                                        alt={`The cover for ${coin.title}`}
+                                        src={coin.symbol}
+                                        alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
                                 <Card.Body>
-                                    <Card.Title>{coin.title}</Card.Title>
-                                    <p className="small">Authors: {coin.authors}</p>
+                                    <Card.Title>{coin.name}</Card.Title>
+                                    <p className="small">Ranks: {coin.rank}</p>
+                                    <p className="small">Symbol: {coin.symbol}</p>
+                                    <p className="small">Price: ${coin.priceUsd}</p>
+                                    <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
+                                    <p className="small">Explorer: <a href={coin.explorer}>Link</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <Button

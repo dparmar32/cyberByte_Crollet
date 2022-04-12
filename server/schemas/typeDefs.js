@@ -4,7 +4,7 @@ const typeDefs = gql`
   type User {
     _id: ID!
     name: String!
-    email: String
+    email: String!
     coinCount: Int
     savedCoins: [Coin]
   }

@@ -20,6 +20,12 @@ const coinSchema = new Schema({
         type: Number,
         required: true,
     },
+    changePercent24Hr: {
+        type: Number,
+    },
+    explorer: {
+        type: String,
+    },
 });
 
 module.exports = coinSchema;

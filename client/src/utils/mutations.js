@@ -36,6 +36,8 @@ export const SAVE_COIN = gql`
         Symbol
         name
         priceUsd
+        changePercent24Hr
+        explorer
       }
     }
   }
@@ -53,6 +55,8 @@ export const REMOVE_COIN = gql`
         Symbol
         name
         priceUsd
+        changePercent24Hr
+        explorer
       }
     }
   }

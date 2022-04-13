@@ -7,18 +7,21 @@ import {
     Button,
     Card,
     CardColumns,
+    CardGroup,
+    CardDeck,
+    CardRow,
 } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { SAVE_COIN } from '../utils/mutations';
 import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
-// import { axios } from 'axios';
+
 
 import Auth from '../utils/auth';
-import Axios from 'axios'
+// import Axios from 'axios'
 
 const SearchCoins = () => {
-    // create state for holding returned google api data
+    // create state for holding returned Cryto api data
     const [searchedCoins, setSearchedCoins] = useState([]);
     // create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
@@ -186,19 +189,19 @@ const SearchCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img
-                                        src={coin.symbol}
+                                    <Card.Img className="symbol"
+                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
-                                <Card.Body>
-                                    <Card.Title>{coin.name}</Card.Title>
-                                    <p className="small">Ranks: {coin.rank}</p>
+                                <Card.Body className="card1">
+                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                    <p className="small">Rank: # {coin.rank}</p>
                                     <p className="small">Symbol: {coin.symbol}</p>
-                                    <p className="small">Price: ${coin.priceUsd}</p>
+                                    <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small">Explorer: <a href={coin.explorer}>Link</a></p>
+                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
                                       <Button
@@ -209,7 +212,7 @@ const SearchCoins = () => {
                                         onClick={() => handleSaveCoin(coin.coinId)}
                                       >
                                         {savedCoinIds?.some((savedId) => savedId === coin.coinId)
-                                          ? 'Coi Already Saved!'
+                                          ? 'Coin Already Saved!'
                                           : 'Save This Coin!'}
                                       </Button>
                                     )}

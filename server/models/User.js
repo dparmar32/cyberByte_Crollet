@@ -21,7 +21,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+<<<<<<< HEAD
     // set savedBooks to be an array of data that adheres to the coinSchema
+=======
+    // set savedBooks to be an array of data that adheres to the bookSchema
+>>>>>>> fa45a1a878a7f1a845c4ddfe28421bbc6cca274d
     savedCoins: [coinSchema],
   },
   // set this to use virtual below
@@ -35,8 +39,7 @@ const userSchema = new Schema(
 // hash user password
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
-    const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
+    this.password = await bcrypt.hash(this.password, 10);
   }
 
   next();

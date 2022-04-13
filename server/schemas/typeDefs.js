@@ -17,6 +17,18 @@ const typeDefs = gql`
     priceUsd: String
     changePercent24Hr: String
     explorer: String
+
+    authors: [String]
+    description: String
+    image: String
+    link: String
+    title: String!
+
+    rank: Int
+    Symbol: String
+    name: String
+    priceUsd: String
+
   }
 
   type Auth {
@@ -24,14 +36,28 @@ const typeDefs = gql`
     user: User
   }
 
+
+  input coinInput {
+    id: [String]
+    rank: Number
+    coinId: Number
+    symbol: String
+    priceUSD: String
+    explorer: String
+    supply: Number
+    maxSupply: Number
+    marketCapUsd: Number
+    volumeUsd24Hr: Number
+    priceUsd: Number
+    changePercent24Hr: Number
+    vwap24Hr: Number
+
   input CoinInput {
     rank: String
     symbol: String
     coinId: String!
     priceUsd: String!
     name: String!
-    changePercent24Hr: String
-    explorer: String
   }
 
   type Query {
@@ -40,10 +66,21 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    savedCoins(coinData: coinInput!): User
+    removeCoin(coinId: ID!): User
     addUser(name: String!, email: String!, password: String!): Auth
+<<<<<<< HEAD
+    saveBook(bookData: BookInput!): User
+    removeBook(bookId: ID!): User
+>>>>>>> 41927253eaffb3ab2963cc642f1ac3ec3cee14d7
+=======
     saveCoin(coinData: CoinInput!): User
     removeCoin(coinId: ID!): User
+>>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
   }
 `;
 
 module.exports = typeDefs;
+
+// changed bookinput to coininput review 

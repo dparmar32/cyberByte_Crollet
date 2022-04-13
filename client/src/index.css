@@ -79,6 +79,10 @@ h5 {
   
 }
 
+.small {
+  font-weight: bold;
+}
+
 /* @media (min-width: 576px) {
   .card-columns {
     column-count: 1;

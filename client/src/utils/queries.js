@@ -9,7 +9,7 @@ export const QUERY_ME = gql`
       savedCoins {
         coinId
         rank
-        Symbol
+        symbol
         name
         priceUsd
         changePercent24Hr

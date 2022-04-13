@@ -33,7 +33,7 @@ export const SAVE_COIN = gql`
       savedCoins {
         coinId
         rank
-        Symbol
+        symbol
         name
         priceUsd
         changePercent24Hr
@@ -52,7 +52,7 @@ export const REMOVE_COIN = gql`
       savedCoins {
         coinId
         rank
-        Symbol
+        symbol
         name
         priceUsd
         changePercent24Hr

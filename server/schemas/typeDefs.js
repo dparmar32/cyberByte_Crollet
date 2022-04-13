@@ -5,17 +5,17 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     email: String!
-    coinCount: Int
+    coinCount: String
     savedCoins: [Coin]
   }
 
   type Coin {
     coinId: ID!
-    rank: Int
-    Symbol: String
+    rank: String
+    symbol: String
     name: String
-    priceUsd: Int
-    changePercent24Hr: Int
+    priceUsd: String
+    changePercent24Hr: String
     explorer: String
   }
 
@@ -26,11 +26,11 @@ const typeDefs = gql`
 
   input CoinInput {
     rank: String
-    Symbol: String!
+    symbol: String
     coinId: String!
-    priceUsd: Int!
+    priceUsd: String!
     name: String!
-    changePercent24Hr: Int
+    changePercent24Hr: String
     explorer: String
   }
 

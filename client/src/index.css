@@ -68,6 +68,24 @@ h5 {
 
 }
 
+<<<<<<< HEAD
+=======
+
+.card1 {
+  background-color: #dee1e9;
+  color: #15806a;
+  font-size: 20px;
+  
+
+  
+  
+}
+
+.small {
+  font-weight: bold;
+}
+
+>>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
 /* @media (min-width: 576px) {
   .card-columns {
     column-count: 1;

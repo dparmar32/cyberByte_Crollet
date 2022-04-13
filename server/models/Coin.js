@@ -8,20 +8,20 @@ const coinSchema = new Schema({
         required: true,
     },
     rank: {
-        type: Number,
+        type: String,
     },
-    Symbol: {
+    symbol: {
         type: String,
     },
     name: {
         type: String,
     },
     priceUsd: {
-        type: Number,
+        type: String,
         required: true,
     },
     changePercent24Hr: {
-        type: Number,
+        type: String,
     },
     explorer: {
         type: String,

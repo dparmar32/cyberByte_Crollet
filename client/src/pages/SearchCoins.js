@@ -185,17 +185,28 @@ const SearchCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
+<<<<<<< HEAD
                                     <Card.Img
                                         src={coin.symbol}
+=======
+                                    <Card.Img className="symbol"
+                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+>>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
+<<<<<<< HEAD
                                 <Card.Body>
                                     <Card.Title>{coin.name}</Card.Title>
                                     <p className="small">Ranks: {coin.rank}</p>
+=======
+                                <Card.Body className="card1">
+                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                    <p className="small">Rank: # {coin.rank}</p>
+>>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
                                     <p className="small">Symbol: {coin.symbol}</p>
-                                    <p className="small">Price: ${coin.priceUsd}</p>
+                                    <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
                                     <p className="small">Explorer: <a href={coin.explorer}>Link</a></p>
                                     <Card.Text>{coin.description}</Card.Text>

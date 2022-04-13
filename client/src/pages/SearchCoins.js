@@ -175,11 +175,12 @@ const SearchCoins = () => {
             </Jumbotron>
 
             <Container>
-                <h2>
+                <h2>Hello!</h2>
+                {/* <h2>
                     {searchedCoins.length
                         ? `${searchedCoins.length} results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
-                </h2>
+                </h2>  */}
                 <CardColumns>
                     {searchedCoins.map((coin) => {
                         return (

@@ -28,6 +28,8 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 Search For Crypto
               </Nav.Link>
+
+              {/* <Nav.Link as={Link} to='/'>Feedback</Nav.Link> */}
                             
               {/* if user is logged in show saved Cryptos and logout */}
               {Auth.loggedIn() ? (

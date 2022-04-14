@@ -25,9 +25,18 @@ const SearchCoins = () => {
 
     // create state to hold saved coinId values
     const [savedCoinIds, setSavedCoinIds] = useState(getSavedCoinIds());
-
+    const [topFiveCoinState, setTopFiveCoinState] = useState();
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
-
+    const response = () => {
+        fetch("https://api.coincap.io/v2/assets")
+    .then((response) => {
+       return response.json();
+    })
+    .then((data) => {
+       console.log(data.data)
+       setTopFiveCoinState(data.data)
+    })
+    };
 
 
 
@@ -43,7 +52,7 @@ const SearchCoins = () => {
     //     }catch(error){
     //         console.log(error);
     //     }
-    }
+
     // const myArr = JSON.parse(api);
 
     //console.log(api);
@@ -77,8 +86,56 @@ const SearchCoins = () => {
     // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
     // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
     useEffect(() => {
+        // topFiveCoins();
+        response();
         return () => saveCoinIds(savedCoinIds);
-    });
+    
+    }, []);
+
+const topFiveCoins = async () => {
+    try {
+        const response = await fetch(
+            // `https://www.googleapis.com/coins/v1/volumes?q=${searchInput}`
+            // `api.coincap.io/v2/assets/?q=${{id}}`
+        //    "https://api.coincap.io/v2/assets"
+        // "api.coincap.io/v2/assets?limit=10&searchInput"
+        `https://api.coincap.io/v2/assets?limit=10`
+        );
+
+        if (!response.ok) {
+            throw new Error('something went wrong!');
+        }
+
+        const { data } = await response.json();
+
+        const topFiveCoinData = data.map((coin) => ({
+            // coinId: coin.id,
+            // rank: coin.rank,
+            // symbol: coin.symbol,
+            // name: coin.name,
+            // priceUsd: coin.priceUsd
+
+            coinId: coin.id,
+            rank: coin.rank || ['No rank to display'],
+            symbol: coin.symbol,
+            name: coin.name,
+            priceUsd: coin.priceUsd,
+            changePercent24Hr : coin.changePercent24Hr,
+            explorer: coin.explorer,
+
+            // priceUsd: coin.volumeInfo.priceUsd.thumbnail || '',
+        }))
+
+        const topFiveCoinDataFilter = topFiveCoinData.filter((top) => {
+           return top.rank >= 5;
+        })
+
+        setTopFiveCoinState(topFiveCoinDataFilter);
+} catch (err){
+    console.error(err);    
+}
+};
+
     // create method to search for coins and set state on form submit
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -178,33 +235,25 @@ const SearchCoins = () => {
                 <h2>
                     {searchedCoins.length
                         ? `${searchedCoins.length} results:`
-                        : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
+                        : 'hello'}
                 </h2>
                 <CardColumns>
                     {searchedCoins.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-<<<<<<< HEAD
-                                    <Card.Img
-                                        src={coin.symbol}
-=======
+
                                     <Card.Img className="symbol"
                                         src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
->>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
+
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
-<<<<<<< HEAD
-                                <Card.Body>
-                                    <Card.Title>{coin.name}</Card.Title>
-                                    <p className="small">Ranks: {coin.rank}</p>
-=======
+
                                 <Card.Body className="card1">
                                     <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
->>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>

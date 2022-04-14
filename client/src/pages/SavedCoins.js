@@ -67,7 +67,7 @@ const SavedCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img
+                                    <Card.Img className= "symbol img"
                                     src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
                                     // alt={`The symbol for ${coin.name}`}
                                         variant="top"
@@ -79,7 +79,7 @@ const SavedCoins = () => {
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd.fixed(2)}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <Button

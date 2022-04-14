@@ -188,19 +188,21 @@ const SearchCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img className="symbol"
+                                    <Card.Img className="symbol img"
                                         src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                        alt={`The symbol for ${coin.name}`}
+                                        // alt={`The symbol for ${coin.name}`}
+                                        onerror="this.src='/Users/shadae/bootcamp/projects/cyberByte_Crollet/client/src/dollar-coin-vector-1953442.jpeg'"
                                         variant="top"
                                     />
-                                ) : null}
-                                <Card.Body className="card1">
+                                ):null }
+
+                                <Card.Body className="card1 ">
                                     <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
-                                    <p className="small">Symbol: {coin.symbol}</p>
+                                    <p className="small"><span class= "labels">Symbol:</span> {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
                                       <Button

@@ -70,17 +70,51 @@ h5 {
 
 
 .card1 {
-  background-color: #dee1e9;
+  background-color: white;
   color: #15806a;
   font-size: 20px;
-  
 
-  
-  
+}
+
+.img {
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+a {
+  color: white;
+  font-style: normal;
+}
+.button {
+  padding: 10px 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 5px;
+  /* box-shadow: 0 5px #999; */
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .small {
   font-weight: bold;
+}
+
+span {
+  font-weight: 1000px;
 }
 
 /* @media (min-width: 576px) {

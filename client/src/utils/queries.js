@@ -6,8 +6,7 @@ export const QUERY_ME = gql`
       _id
       name
       email
-<<<<<<< HEAD
-=======
+
       savedCoins {
         coinId
         rank
@@ -17,7 +16,6 @@ export const QUERY_ME = gql`
         changePercent24Hr
         explorer
       }
->>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
     }
   }
 `;

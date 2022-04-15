@@ -12,7 +12,7 @@ import { setContext } from '@apollo/client/link/context';
 import SearchCoins from './pages/SearchCoins';
 import SavedCoins from './pages/SavedCoins';
 import Navbar from './components/Navbar';
-// import TopTen from './components/TopTen';
+import TopTen from './components/TopTen';
 import Footer from './components/Footer';
 
 
@@ -49,14 +49,10 @@ function App() {
           <Switch>
             {/* <Route exact ="/" component={TopTen} /> */}
             {/*<Route exact path="/" component={SearchBooks} />*/}
-<<<<<<< HEAD
-            <Route exact path ="/" component={SearchCoins} />
-            {/* <Route exact path="/" component={TopTen} /> */}
-=======
             <Route exact path="/" component={SearchCoins} />
+            <Route exact path="/" component={TopTen} />
             {/* <Route exact path="/saved" component={SavedBooks} /> */}
             <Route exact path="/saved" component={SavedCoins} />
->>>>>>> 4dfeabc668375197b80873d4349640ac081da2a6
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
           <Footer />

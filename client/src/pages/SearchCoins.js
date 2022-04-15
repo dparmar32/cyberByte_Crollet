@@ -20,6 +20,7 @@ import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
 import Auth from '../utils/auth';
 // import Axios from 'axios'
 
+ 
 const SearchCoins = () => {
     // create state for holding returned Cryto api data
     const [searchedCoins, setSearchedCoins] = useState([]);
@@ -91,17 +92,17 @@ const SearchCoins = () => {
         }
 
         try {
-            const response = await fetch(
-                // `https://www.googleapis.com/coins/v1/volumes?q=${searchInput}`
-                // `api.coincap.io/v2/assets/?q=${{id}}`
-                `https://api.coincap.io/v2/assets?search=${searchInput}`
-            );
+            // const fixedResponse = await fetch(`https://api.coincap.io/v2/assets?limit=10`)
+
+            const response = await fetch (`https://api.coincap.io/v2/assets?search=${searchInput}`)
 
             if (!response.ok) {
                 throw new Error('something went wrong!');
             }
 
             const { data } = await response.json();
+
+            // const { fixedData } = await response.json();
 
             const coinData = data.map((coin) => ({
                 // coinId: coin.id,
@@ -150,6 +151,7 @@ const SearchCoins = () => {
           console.error(err);
         }
     };
+    
     return (
         <>
             <Jumbotron fluid className="gradient text-light">
@@ -178,12 +180,49 @@ const SearchCoins = () => {
             </Jumbotron>
 
             <Container>
-                <h2>Hello!</h2>
-                {/* <h2>
+                {/* <h2>Hello!</h2> */}
+                <CardColumns>
+                    {searchedCoins.map((coin) => {
+                        return (
+                            <Card key={coin.coinId} border="dark">
+                                {coin.symbol ? (
+                                    <Card.Img className="symbol"
+                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                        alt={`The symbol for ${coin.name}`}
+                                        variant="top"
+                                    />
+                                ) : null}
+                                <Card.Body className="card1">
+                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                    <p className="small">Rank: # {coin.rank}</p>
+                                    <p className="small">Symbol: {coin.symbol}</p>
+                                    <p className="small">Price: $ {coin.priceUsd}</p>
+                                    <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
+                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
+                                    <Card.Text>{coin.description}</Card.Text>
+                                    {Auth.loggedIn() && (
+                                      <Button
+                                        disabled={savedCoinIds?.some(
+                                          (savedId) => savedId === coin.coinId
+                                        )}
+                                        className="btn-block btn-info"
+                                        onClick={() => handleSaveCoin(coin.coinId)}
+                                      >
+                                        {savedCoinIds?.some((savedId) => savedId === coin.coinId)
+                                          ? 'Coin Already Saved!'
+                                          : 'Save This Coin!'}
+                                      </Button>
+                                    )}
+                                </Card.Body>
+                            </Card>
+                        );
+                    })}
+                </CardColumns>
+                <h2>
                     {searchedCoins.length
                         ? `${searchedCoins.length} results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
-                </h2>  */}
+                </h2> 
                 <CardColumns>
                     {searchedCoins.map((coin) => {
                         return (

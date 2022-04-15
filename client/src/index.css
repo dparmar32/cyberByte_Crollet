@@ -69,6 +69,7 @@ h5 {
 }
 
 
+
 .card1 {
   background-color: #dee1e9;
   color: #15806a;
@@ -81,6 +82,9 @@ h5 {
 
 .small {
   font-weight: bold;
+}
+.search-coin {
+  position: relative;
 }
 
 /* @media (min-width: 576px) {

@@ -25,7 +25,7 @@ const AppNavbar = () => {
             <Nav className='ml-auto'>        
               
               {/*Constant link for logged in and non logged in users*/}
-              <Nav.Link as={Link} to='/'>
+              <Nav.Link as={Link} to='/search'>
                 Search For Crypto
               </Nav.Link>
                             

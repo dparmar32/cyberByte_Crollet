@@ -69,7 +69,7 @@ h5 {
 }
 
 
-@media (min-width: 576px) {
+@media (min-width: 576px) {}
 
 
 
@@ -157,10 +157,7 @@ button.remove {
   position: relative;
 }
 
-<<<<<<< HEAD
-/* @media (min-width: 576px) {
->>>>>>> 036614ac198fc25bf9591c4e350c6942f42d9ab5
-=======
+
 button.badge {
   background-color:darkred;
   border: none;
@@ -179,8 +176,8 @@ aside {
 
 
 
-@media (min-width: 576px) {
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
+
+/* @media (min-width: 576px) {
   .card-columns {
     column-count: 1;
   }
@@ -196,4 +193,4 @@ aside {
   .card-columns {
     column-count: 3;
   }
-}
+} */

@@ -16,6 +16,7 @@ import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import TopTen from './components/TopTen';
 import Footer from './components/Footer';
+import Basket from './components/Basket';
 
 
 // Construct our main GraphQL API endpoint
@@ -42,6 +43,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -49,16 +51,9 @@ function App() {
         <>
           <Navbar />
           <Switch>
-<<<<<<< HEAD
-            {/* <Route exact ="/" component={TopTen} /> */}
-            {/*<Route exact path="/" component={SearchBooks} />*/}
-            <Route exact path="/" component={SearchCoins} />
-            <Route exact path="/" component={TopTen} />
-=======
             
             {/*<Route exact path="/" component={SearchBooks} />*/}
             <Route exact path="/search" component={SearchCoins} />
->>>>>>> 036614ac198fc25bf9591c4e350c6942f42d9ab5
             {/* <Route exact path="/saved" component={SavedBooks} /> */}
             <Route exact path="/saved" component={SavedCoins} />
             {/* <Route render={() => <h1 className="display-2">Wrong page!</h1>} /> */}

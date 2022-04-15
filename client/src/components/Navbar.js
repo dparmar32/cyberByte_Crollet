@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, NavbarBrand } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
@@ -39,14 +39,16 @@ const AppNavbar = () => {
                   </Nav.Link>
                                   
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+
+                  {/* Cart link   */}
+                  <Nav as={Link} to='/saved'><img src={Cart}  width="100" alt="cart"/>
+                  </Nav>
                 </>
               ) : (
                   <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
                 )}
 
-              {/* Cart link   */}
-              <Nav as={Link} to='/Cart'><img src={Cart}  width="100" alt="cart"/>
-              </Nav>
+              
 
             </Nav>
           </Navbar.Collapse>

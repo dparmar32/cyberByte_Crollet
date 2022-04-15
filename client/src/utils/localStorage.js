@@ -28,3 +28,11 @@ export const removeCoinId = (coinId) => {
 
   return true;
 };
+
+export const cartCoinIds = (coinIdArr) => {
+  if (coinIdArr.length) {
+    localStorage.setItem('cart_coins', JSON.stringify(coinIdArr));
+  } else {
+    localStorage.removeItem('saved_coins');
+  }
+};

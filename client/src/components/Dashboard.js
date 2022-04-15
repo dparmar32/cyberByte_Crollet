@@ -83,8 +83,9 @@ return (
 
   <Container>
     <h2>
-      Here are top ten crypto currency data
+      Here are the top ten cryptocurrencies!
     </h2>
+    <p>If you are interted in investing in crpto coins, we are inviting you to search for more crytos' information.</p>
                 {/* <h2>
                     {topFiveCoinState.length
                         ? '${searchedCoins.length} results:'
@@ -95,7 +96,7 @@ return (
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img className="symbol"
+                                    <Card.Img className="small"
                                         src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
@@ -107,7 +108,7 @@ return (
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small">Explorer: <a href={coin.explorer}>Link</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                    
                                 </Card.Body>

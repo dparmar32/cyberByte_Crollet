@@ -7,10 +7,8 @@ import {
     Button,
     Card,
     CardColumns,
-    CardGroup,
-    CardDeck,
-    CardRow,
-} from 'react-bootstrap';
+    
+   } from 'react-bootstrap';
 
 import { useMutation } from '@apollo/client';
 import { SAVE_COIN } from '../utils/mutations';
@@ -178,7 +176,6 @@ const SearchCoins = () => {
                     </Form>
                 </Container>
             </Jumbotron>
-
             <Container>
                 {/* <h2>Hello!</h2> */}
                 <CardColumns>
@@ -228,7 +225,7 @@ const SearchCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img className="symbol"
+                                    <Card.Img className="small"
                                         src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
@@ -240,7 +237,7 @@ const SearchCoins = () => {
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
                                       <Button

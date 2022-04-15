@@ -61,3 +61,19 @@ export const REMOVE_COIN = gql`
     }
   }
 `;
+
+// export const REMOVE_COIN = gql`
+//   mutation removeCoin($coinId: ID!) {
+//     cartCoin(coinId: $coinId) {
+//       _id
+//       name
+//       email
+//       savedCoins {
+//         coinId      
+//         symbol
+//         name
+//         priceUsd
+//       }
+//     }
+//   }
+// `;

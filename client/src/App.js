@@ -15,6 +15,7 @@ import SavedCoins from './pages/SavedCoins';
 import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Basket from './components/Basket';
 
 
 // Construct our main GraphQL API endpoint
@@ -40,6 +41,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   return (

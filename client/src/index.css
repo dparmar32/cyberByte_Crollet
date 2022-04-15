@@ -68,7 +68,30 @@ h5 {
 
 }
 
+<<<<<<< HEAD
 @media (min-width: 576px) {
+=======
+
+
+.card1 {
+  background-color: #dee1e9;
+  color: #15806a;
+  font-size: 20px;
+  
+
+  
+  
+}
+
+.small {
+  font-weight: bold;
+}
+.search-coin {
+  position: relative;
+}
+
+/* @media (min-width: 576px) {
+>>>>>>> 036614ac198fc25bf9591c4e350c6942f42d9ab5
   .card-columns {
     column-count: 1;
   }

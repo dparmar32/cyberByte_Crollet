@@ -11,8 +11,10 @@ import { setContext } from '@apollo/client/link/context';
 
 import SearchCoins from './pages/SearchCoins';
 import SavedCoins from './pages/SavedCoins';
+// import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Basket from './components/Basket';
 
 
 // Construct our main GraphQL API endpoint
@@ -39,6 +41,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -46,10 +49,9 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            {/*<Route exact path="/" component={SearchBooks} />*/}
-            <Route exact path="/" component={SearchCoins} />
-            {/* <Route exact path="/saved" component={SavedBooks} /> */}
+            <Route exact path="/" component={SearchCoins} />            
             <Route exact path="/saved" component={SavedCoins} />
+            <Route exact path="/saved" component={Basket} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
           <Footer />

@@ -8,13 +8,23 @@ import {
 } from 'react-bootstrap';
 
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries';
+import { QUERY_ME, QUERY_ME2 } from '../utils/queries';
 import { REMOVE_COIN } from '../utils/mutations';
 import { removeCoinId } from '../utils/localStorage';
 
 import Auth from '../utils/auth';
 
 import Cart from '../cart.png';
+
+import Basket from '../components/Basket'
+import { useState } from 'react';
+import { CART_COIN } from '../utils/mutations';
+
+
+// const cartCoins = () => {
+//     const [cartItems, setCartItems] = useMutation(CART_COIN);
+// }
+
 
 const SavedCoins = () => {
     const { loading, data } = useQuery(QUERY_ME);
@@ -48,47 +58,84 @@ const SavedCoins = () => {
     }
 
     return (
+     
         <>
             <Jumbotron fluid className="gradient text-light">
                 <Container>
-                    <h1>Viewing {userData.username}'s saved Cryptos!</h1>
+                    <h1>Viewing {userData.name}'s saved Cryptos!</h1>
                 </Container>
             </Jumbotron>
-            <Container>
-                <h3>
+    {/* Cart Items */}
+            <aside className="block2 col-3">
+            <h3>Cart Items</h3>
+            <h5>
+                    {userData.cartCoins?.length
+                        ? ` Viewing ${userData.cartCoins.length} saved ${
+                            userData.cartCoins.length === 1 ? 'Crypto' : 'Cryptos'
+                        }:`
+                        : 'Cart is Empty!'}
+            </h5>
+            {/* <div>
+                    {cartItems.length === 0 && <div>Cart is empty</div>}
+                    {cartItems.map((item) => (
+                    <div key={item.id} className="row">
+                        <div className="col-2">{item.name}</div>
+                      <div className="col-2">
+                        <button onClick={() => onRemove(item)} className="remove">
+                            -
+                        </button>{' '}
+                        <button onClick={() => onAdd(item)} className="add">
+                            +
+                        </button>
+                      </div>
+
+                        <div className="col-2 text-right">
+                        {item.qty} x ${item.price.toFixed(2)}
+                        </div>
+                    </div>
+                    ))}
+                </div> */}
+            </aside>
+
+
+    {/* Save Crypto container */}
+            <Container className="block col-13">
+             <h3>
                     {userData.savedCoins?.length
                         ? ` Viewing ${userData.savedCoins.length} saved ${
                             userData.savedCoins.length === 1 ? 'Crypto' : 'Cryptos'
                         }:`
                         : 'You have no saved any Cryptos!'}
-                </h3>
+             </h3>
+             
+       
                 <CardColumns>
                     {userData.savedCoins?.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-                                    <Card.Img
+                                    <Card.Img className="small"
                                     src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                    // alt={`The symbol for ${coin.name}`}
+                                    alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
                                 <Card.Body className="card1">
-                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
                                     <p className="small">Symbol: {coin.symbol}</p>
-                                    <p className="small">Price: $ {coin.priceUsd.fixed(2)}</p>
+                                    <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <Button
-                                            className="btn btn-danger btn-sm active"
+                                            className="btn btn-danger btn-sm active left align"
                                             onClick={() => handleDeleteCoin(coin.coinId)}>
                                             Delete this Crypto!
                                         </Button>
                                         <Button
-                                            className='btn btn-info btn-sm active'><img src={Cart} width="60" alt="cart"></img>
+                                            className='btn btn-info btn-sm active right align'><img src={Cart} width="60" alt="cart"></img>
                                         </Button>
                                     </div>
                                 </Card.Body>

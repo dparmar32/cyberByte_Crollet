@@ -74,6 +74,7 @@ h5 {
   background-color: white;
   color: #15806a;
   font-size: 20px;
+<<<<<<< HEAD
 
 
 }
@@ -109,15 +110,89 @@ a {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+=======
+  
+}
+img.small {
+  max-width: 8rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  
+>>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
 }
 
-.small {
-  font-weight: bold;
+a {
+  color: white;
+  font-style: normal;
+}
+
+.button {
+  padding: 10px 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 5px;
+  /* box-shadow: 0 5px #999; */
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+btn-group {
+  padding-left: 10px ;
+  padding-right: 10px ;
+}
+
+/* Cart */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-3 {
+  flex: 1;
+}
+
+.col-13 {
+  flex: 2;
+}
+
+.block2 {
+  background-color:#dee1e9;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.row.center {
+  align-items: center;
+}
+
+button.add {
+  background-color: #041575;
+  width: 1.5rem;
+}
+
+button.remove {
+  background-color:darkred;
+  width: 1.5rem;
 }
 .search-coin {
   position: relative;
 }
 
+<<<<<<< HEAD
 span {
   font-weight: 1000px;
 }
@@ -135,6 +210,25 @@ btn-group{
   padding-left: 10px ;
   padding-right: 10px ;
 }
+=======
+button.badge {
+  background-color:darkred;
+  border: none;
+  color:white;
+  width: 1.5rem;
+}
+
+.text-right {
+  text-align:right ;
+}
+
+aside {
+  float: right;
+}
+
+
+
+>>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
 
 @media (min-width: 576px) {
   .card-columns {
@@ -152,4 +246,8 @@ btn-group{
   .card-columns {
     column-count: 3;
   }
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d

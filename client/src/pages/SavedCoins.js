@@ -73,7 +73,7 @@ const SavedCoins = () => {
                                         variant="top"
                                     />
                                 ) : null}
-                                <Card.Body className="card1">
+                                <Card.Body className="card1 justify-content-center">
                                     <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
                                     <p className="small">Symbol: {coin.symbol}</p>
@@ -81,14 +81,14 @@ const SavedCoins = () => {
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
                                     <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <div class="btn-group btn-size" role="group" aria-label="Basic example">
                                         <Button
-                                            className="btn btn-danger btn-sm active"
+                                            className="btn btn-danger btn-sm active justify-content-center"
                                             onClick={() => handleDeleteCoin(coin.coinId)}>
                                             Delete this Crypto!
                                         </Button>
                                         <Button
-                                            className='btn btn-info btn-sm active'><img src={Cart} width="60" alt="cart"></img>
+                                            className='btn btn-info btn-sm active justify-content-center'><img src={Cart} width="60" alt="cart"></img>
                                         </Button>
                                     </div>
                                 </Card.Body>

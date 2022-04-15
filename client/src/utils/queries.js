@@ -6,7 +6,6 @@ export const QUERY_ME = gql`
       _id
       name
       email
-
       savedCoins {
         coinId
         rank

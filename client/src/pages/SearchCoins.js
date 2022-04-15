@@ -28,7 +28,7 @@ const SearchCoins = () => {
     const [topFiveCoinState, setTopFiveCoinState] = useState();
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
     const response = () => {
-        fetch("https://api.coincap.io/v2/assets")
+        fetch("https://api.coincap.io/v2/assets?limit=10")
     .then((response) => {
        return response.json();
     })

@@ -245,7 +245,6 @@ const topFiveCoins = async () => {
 
                                     <Card.Img className="symbol"
                                         src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-
                                         alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />

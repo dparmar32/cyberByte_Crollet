@@ -69,6 +69,7 @@ h5 {
 }
 
 
+
 .card1 {
   background-color: #dee1e9;
   color: #15806a;
@@ -148,6 +149,9 @@ button.add {
 button.remove {
   background-color:darkred;
   width: 1.5rem;
+}
+.search-coin {
+  position: relative;
 }
 
 button.badge {

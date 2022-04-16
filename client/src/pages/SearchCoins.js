@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Jumbotron,
     Container,
@@ -7,16 +7,15 @@ import {
     Button,
     Card,
     CardColumns,
-    
-   } from 'react-bootstrap';
 
-import { useMutation } from '@apollo/client';
-import { SAVE_COIN } from '../utils/mutations';
-import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
+} from 'react-bootstrap';
+
+import {useMutation} from '@apollo/client';
+import {SAVE_COIN} from '../utils/mutations';
+import {saveCoinIds, getSavedCoinIds} from '../utils/localStorage';
 
 
 import Auth from '../utils/auth';
-// import Axios from 'axios'
 
  
 const SearchCoins = () => {
@@ -30,6 +29,11 @@ const SearchCoins = () => {
 
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
     useEffect(() => {
         return () => saveCoinIds(savedCoinIds);
     });
@@ -42,30 +46,43 @@ const SearchCoins = () => {
         }
 
         try {
+<<<<<<< HEAD
 
 
             const response = await fetch (`https://api.coincap.io/v2/assets?search=${searchInput}`)
+=======
+            const response = await fetch(
+                `https://api.coincap.io/v2/assets?search=${searchInput}`
+            );
+>>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
 
             if (!response.ok) {
                 throw new Error('something went wrong!');
             }
 
-            const { data } = await response.json();
+            const {data} = await response.json();
 
 
 
             const coinData = data.map((coin) => ({
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
                 coinId: coin.id,
                 rank: coin.rank || ['No rank to display'],
                 symbol: coin.symbol,
                 name: coin.name,
                 priceUsd: coin.priceUsd,
-                changePercent24Hr : coin.changePercent24Hr,
+                changePercent24Hr: coin.changePercent24Hr,
                 explorer: coin.explorer,
 
+<<<<<<< HEAD
                
+=======
+            
+>>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
             }));
 
             setSearchedCoins(coinData);
@@ -88,13 +105,13 @@ const SearchCoins = () => {
         }
 
         try {
-          const { data } = await saveCoin({
-            variables: { coinData: { ...coinToSave } },
-          });
-          console.log(savedCoinIds);
-          setSavedCoinIds([...savedCoinIds, coinToSave.coinId]);
+            const {data} = await saveCoin({
+                variables: {coinData: {...coinToSave}},
+            });
+            console.log(savedCoinIds);
+            setSavedCoinIds([...savedCoinIds, coinToSave.coinId]);
         } catch (err) {
-          console.error(err);
+            console.error(err);
         }
     };
     
@@ -102,7 +119,6 @@ const SearchCoins = () => {
         <>
             <Jumbotron fluid className="gradient text-light">
                 <Container>
-                    {/* <h1>Search for Crypto!</h1> */}
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Row>
                             <Col xs={12} md={8}>
@@ -125,85 +141,53 @@ const SearchCoins = () => {
                 </Container>
             </Jumbotron>
             <Container>
-                <CardColumns>
-                    {searchedCoins.map((coin) => {
-                        return (
-                            <Card key={coin.coinId} border="dark">
-                                {coin.symbol ? (
-                                    <Card.Img className="symbol"
-                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                        alt={`The symbol for ${coin.name}`}
-                                        variant="top"
-                                    />
-                                ) : null}
-                                <Card.Body className="card1">
-                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
-                                    <p className="small">Rank: # {coin.rank}</p>
-                                    <p className="small">Symbol: {coin.symbol}</p>
-                                    <p className="small">Price: $ {coin.priceUsd}</p>
-                                    <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small"><a href={coin.explorer}>Learn More</a></p>
-                                    <Card.Text>{coin.description}</Card.Text>
-                                    {Auth.loggedIn() && (
-                                      <Button
-                                        disabled={savedCoinIds?.some(
-                                          (savedId) => savedId === coin.coinId
-                                        )}
-                                        className="btn-block btn-info"
-                                        onClick={() => handleSaveCoin(coin.coinId)}
-                                      >
-                                        {savedCoinIds?.some((savedId) => savedId === coin.coinId)
-                                          ? 'Coin Already Saved!'
-                                          : 'Save This Coin!'}
-                                      </Button>
-                                    )}
-                                </Card.Body>
-                            </Card>
-                        );
-                    })}
-                </CardColumns>
-                <h2>
+                <h2 className="dashboard-container">
                     {searchedCoins.length
-                        ? `${searchedCoins.length} results:`
+                        ? `${searchedCoins.length } results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
-                </h2> 
-                <CardColumns>
-                    {searchedCoins.map((coin) => {
+                </h2>
+                {/* <CardColumns> */}
+                <div className="flex-row space-between">
+                       {searchedCoins.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
                                     <Card.Img className="small"
-                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                        alt={`The symbol for ${coin.name}`}
-                                        variant="top"
+                                              src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                              alt={`The symbol for ${coin.name}`}
+                                              variant="top"
                                     />
-                                ) : null}
-                                <Card.Body className="card1">
+                                ):null }
+
+                                <Card.Body className="card1 ">
                                     <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
-                                    <p className="small">Symbol: {coin.symbol}</p>
+                                    <p className="small"><span class= "labels">Symbol:</span> {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
+                                        More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
-                                      <Button
-                                        disabled={savedCoinIds?.some(
-                                          (savedId) => savedId === coin.coinId
-                                        )}
-                                        className="btn-block btn-info"
-                                        onClick={() => handleSaveCoin(coin.coinId)}
-                                      >
-                                        {savedCoinIds?.some((savedId) => savedId === coin.coinId)
-                                          ? 'Coin Already Saved!'
-                                          : 'Save This Coin!'}
-                                      </Button>
+                                        <Button
+                                            disabled={savedCoinIds?.some(
+                                                (savedId) => savedId === coin.coinId
+                                            )}
+                                            className="btn-block btn-info"
+                                            onClick={() => handleSaveCoin(coin.coinId)}
+                                        >
+                                            {savedCoinIds?.some((savedId) => savedId === coin.coinId)
+                                                ? 'Coin Already Saved!'
+                                                : 'Save This Coin!'}
+                                        </Button>
                                     )}
                                 </Card.Body>
                             </Card>
                         );
                     })}
-                </CardColumns>
+                
+                {/* </CardColumns> */}
+                </div>
             </Container>
         </>
     );

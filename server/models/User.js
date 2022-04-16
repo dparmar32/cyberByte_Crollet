@@ -21,7 +21,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // set savedBooks to be an array of data that adheres to the bookSchema
+    // set savedCoins to be an array of data that adheres to the coinSchema
     savedCoins: [coinSchema],
   },
   // set this to use virtual below

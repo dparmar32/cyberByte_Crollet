@@ -163,9 +163,9 @@ aside {
     -webkit-background-clip: text;
     color                  : transparent;
     font-weight            : bold;
-    text-fill-color        : transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /*text-fill-color        : transparent;*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
     animation              : textclip 2s linear infinite;
     display                : inline-block;
 }

@@ -121,7 +121,7 @@ const SearchCoins = () => {
             <Container>
                 <h2 className="dashboard-container">
                     {searchedCoins.length
-                        ? `${searchedCoins.length} results:`
+                        ? `${searchedCoins.length } results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
                 </h2>
                 <CardColumns>

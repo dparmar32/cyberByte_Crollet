@@ -124,8 +124,9 @@ const SearchCoins = () => {
                         ? `${searchedCoins.length } results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
                 </h2>
-                <CardColumns>
-                    {searchedCoins.map((coin) => {
+                {/* <CardColumns> */}
+                <div className="flex-row space-between">
+                       {searchedCoins.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
@@ -162,7 +163,9 @@ const SearchCoins = () => {
                             </Card>
                         );
                     })}
-                </CardColumns>
+                
+                {/* </CardColumns> */}
+                </div>
             </Container>
         </>
     );

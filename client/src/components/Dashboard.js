@@ -33,7 +33,8 @@ const Dashboard = () => {
             </h2>
             <p className="dashboard-text">If you are interested in investing in crypto coins, we are inviting you to
                 search for more crytos' information.</p>
-            <CardColumns>
+            {/* <CardColumns> */}
+            <div className="flex-row space-between">
                 {dashboardCoinState.map((coin) => {
                     return (
                         <Card key={coin.coinId} border="dark">
@@ -57,7 +58,8 @@ const Dashboard = () => {
                         </Card>
                     );
                 })}
-            </CardColumns>
+            {/* </CardColumns> */}
+            </div>
         </Container>
     )
 };

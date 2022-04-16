@@ -22,7 +22,7 @@ const Dashboard = () => {
                 return res.json();
             })
             .then((data) => {
-                console.log(data.data)
+                // console.log(data.data)
                 setDashboardCoinState(data.data)
             })
     };
@@ -63,4 +63,6 @@ const Dashboard = () => {
         </Container>
     )
 };
+
+
 export default Dashboard;

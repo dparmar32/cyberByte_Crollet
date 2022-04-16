@@ -114,23 +114,14 @@ const SavedCoins = () => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
-<<<<<<< HEAD
-                                    <Card.Img className= "symbol img"
-=======
                                     <Card.Img className="small"
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
                                     src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
                                     alt={`The symbol for ${coin.name}`}
                                         variant="top"
                                     />
                                 ) : null}
-<<<<<<< HEAD
-                                <Card.Body className="card1 justify-content-center">
-                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
-=======
                                 <Card.Body className="card1">
                                 <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
                                     <p className="small">Rank: # {coin.rank}</p>
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>

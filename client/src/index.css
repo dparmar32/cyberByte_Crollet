@@ -20,7 +20,14 @@ h6 {
 h2 {
    font-size: 40px;
    font-weight: bold;
+   text-align: center;
+
    
+}
+
+.ptitle{
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 h5 {
@@ -74,7 +81,6 @@ h5 {
   background-color: white;
   color: #15806a;
   font-size: 20px;
-<<<<<<< HEAD
 
 
 }
@@ -110,7 +116,6 @@ a {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-=======
   
 }
 img.small {
@@ -119,8 +124,7 @@ img.small {
   margin-left: auto;
   margin-right: auto;
   border-radius: 8px;
-  
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
+
 }
 
 a {
@@ -192,25 +196,6 @@ button.remove {
   position: relative;
 }
 
-<<<<<<< HEAD
-span {
-  font-weight: 1000px;
-}
-
-
-.btn-danger {
-  width: 222px;
-  margin-left: 7px;
-  margin-right: 5px;
-
-}
-
-
-btn-group{
-  padding-left: 10px ;
-  padding-right: 10px ;
-}
-=======
 button.badge {
   background-color:darkred;
   border: none;
@@ -228,7 +213,6 @@ aside {
 
 
 
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d
 
 @media (min-width: 576px) {
   .card-columns {
@@ -246,8 +230,4 @@ aside {
   .card-columns {
     column-count: 3;
   }
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> 52762b7abc936d301ad54990bc8e3e113cfce36d

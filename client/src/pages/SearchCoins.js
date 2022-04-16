@@ -29,11 +29,8 @@ const SearchCoins = () => {
 
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
     useEffect(() => {
         return () => saveCoinIds(savedCoinIds);
     });
@@ -46,15 +43,9 @@ const SearchCoins = () => {
         }
 
         try {
-<<<<<<< HEAD
-
-
-            const response = await fetch (`https://api.coincap.io/v2/assets?search=${searchInput}`)
-=======
             const response = await fetch(
                 `https://api.coincap.io/v2/assets?search=${searchInput}`
             );
->>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
 
             if (!response.ok) {
                 throw new Error('something went wrong!');
@@ -65,11 +56,6 @@ const SearchCoins = () => {
 
 
             const coinData = data.map((coin) => ({
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
                 coinId: coin.id,
                 rank: coin.rank || ['No rank to display'],
                 symbol: coin.symbol,
@@ -78,11 +64,7 @@ const SearchCoins = () => {
                 changePercent24Hr: coin.changePercent24Hr,
                 explorer: coin.explorer,
 
-<<<<<<< HEAD
-               
-=======
             
->>>>>>> 7974aee541e6571df2b166201cbdaab3fdf28888
             }));
 
             setSearchedCoins(coinData);
@@ -114,83 +96,157 @@ const SearchCoins = () => {
             console.error(err);
         }
     };
-    
-    return (
-        <>
-            <Jumbotron fluid className="gradient text-light">
-                <Container>
-                    <Form onSubmit={handleFormSubmit}>
-                        <Form.Row>
-                            <Col xs={12} md={8}>
-                                <Form.Control
-                                    name="searchInput"
-                                    value={searchInput}
-                                    onChange={(e) => setSearchInput(e.target.value)}
-                                    type="text"
-                                    size="lg"
-                                    placeholder="Search for Crypto"
-                                />
-                            </Col>
-                            <Col xs={12} md={4}>
-                                <Button type="submit" variant="success" size="lg">
-                                    Submit Search
-                                </Button>
-                            </Col>
-                        </Form.Row>
-                    </Form>
-                </Container>
-            </Jumbotron>
-            <Container>
-                <h2 className="dashboard-container">
-                    {searchedCoins.length
-                        ? `${searchedCoins.length } results:`
-                        : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
-                </h2>
-                {/* <CardColumns> */}
-                <div className="flex-row space-between">
-                       {searchedCoins.map((coin) => {
-                        return (
-                            <Card key={coin.coinId} border="dark">
-                                {coin.symbol ? (
-                                    <Card.Img className="small"
-                                              src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                              alt={`The symbol for ${coin.name}`}
-                                              variant="top"
+    if (searchedCoins.length) {
+        return (
+            <>
+                <Jumbotron fluid className="gradient text-light">
+                    <Container>
+                        <Form onSubmit={handleFormSubmit}>
+                            <Form.Row>
+                                <Col xs={12} md={8}>
+                                    <Form.Control
+                                        name="searchInput"
+                                        value={searchInput}
+                                        onChange={(e) => setSearchInput(e.target.value)}
+                                        type="text"
+                                        size="lg"
+                                        placeholder="Search for Crypto"
                                     />
-                                ):null }
+                                </Col>
+                                <Col xs={12} md={4}>
+                                    <Button type="submit" variant="success" size="lg">
+                                        Submit Search
+                                    </Button>
+                                </Col>
+                            </Form.Row>
+                        </Form>
+                    </Container>
+                </Jumbotron>
+                <Container>
+                    <h2 className="results-container">
+                        {`${searchedCoins.length} results:`}
+                    </h2>
+                    {/* <CardColumns> */}
+                    <div className="flex-row space-between">
+                        {searchedCoins.map((coin) => {
+                            return (
+                                <Card key={coin.coinId} border="dark">
+                                    {coin.symbol ? (
+                                        <Card.Img className="small"
+                                                  src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                                  alt={`The symbol for ${coin.name}`}
+                                                  variant="top"
+                                        />
+                                    ) : null}
 
-                                <Card.Body className="card1 ">
-                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
-                                    <p className="small">Rank: # {coin.rank}</p>
-                                    <p className="small"><span class= "labels">Symbol:</span> {coin.symbol}</p>
-                                    <p className="small">Price: $ {coin.priceUsd}</p>
-                                    <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
-                                        More</a></p>
-                                    <Card.Text>{coin.description}</Card.Text>
-                                    {Auth.loggedIn() && (
-                                        <Button
-                                            disabled={savedCoinIds?.some(
-                                                (savedId) => savedId === coin.coinId
-                                            )}
-                                            className="btn-block btn-info"
-                                            onClick={() => handleSaveCoin(coin.coinId)}
-                                        >
-                                            {savedCoinIds?.some((savedId) => savedId === coin.coinId)
-                                                ? 'Coin Already Saved!'
-                                                : 'Save This Coin!'}
-                                        </Button>
-                                    )}
-                                </Card.Body>
-                            </Card>
-                        );
-                    })}
-                
-                {/* </CardColumns> */}
-                </div>
-            </Container>
-        </>
-    );
+                                    <Card.Body className="card1 ">
+                                        <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                        <p className="small">Rank: # {coin.rank}</p>
+                                        <p className="small"><span class="labels">Symbol:</span> {coin.symbol}</p>
+                                        <p className="small">Price: $ {coin.priceUsd}</p>
+                                        <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
+                                        <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
+                                            More</a></p>
+                                        <Card.Text>{coin.description}</Card.Text>
+                                        {Auth.loggedIn() && (
+                                            <Button
+                                                disabled={savedCoinIds?.some(
+                                                    (savedId) => savedId === coin.coinId
+                                                )}
+                                                className="btn-block btn-info"
+                                                onClick={() => handleSaveCoin(coin.coinId)}
+                                            >
+                                                {savedCoinIds?.some((savedId) => savedId === coin.coinId)
+                                                    ? 'Coin Already Saved!'
+                                                    : 'Save This Coin!'}
+                                            </Button>
+                                        )}
+                                    </Card.Body>
+                                </Card>
+                            );
+                        })}
+
+                        {/* </CardColumns> */}
+                    </div>
+                </Container>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <Jumbotron fluid className="gradient text-light">
+                    <Container>
+                        <Form onSubmit={handleFormSubmit}>
+                            <Form.Row>
+                                <Col xs={12} md={8}>
+                                    <Form.Control
+                                        name="searchInput"
+                                        value={searchInput}
+                                        onChange={(e) => setSearchInput(e.target.value)}
+                                        type="text"
+                                        size="lg"
+                                        placeholder="Search for Crypto"
+                                    />
+                                </Col>
+                                <Col xs={12} md={4}>
+                                    <Button type="submit" variant="success" size="lg">
+                                        Submit Search
+                                    </Button>
+                                </Col>
+                            </Form.Row>
+                        </Form>
+                    </Container>
+                </Jumbotron>
+                <Container>
+                    <h2 className="dashboard-container">
+                        {'Welcome to CyberByte Crollet! Search for Crypto to begin'}
+                    </h2>
+                    {/* <CardColumns> */}
+                    <div className="flex-row space-between">
+                        {searchedCoins.map((coin) => {
+                            return (
+                                <Card key={coin.coinId} border="dark">
+                                    {coin.symbol ? (
+                                        <Card.Img className="small"
+                                                  src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                                  alt={`The symbol for ${coin.name}`}
+                                                  variant="top"
+                                        />
+                                    ) : null}
+
+                                    <Card.Body className="card1 ">
+                                        <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                        <p className="small">Rank: # {coin.rank}</p>
+                                        <p className="small"><span class="labels">Symbol:</span> {coin.symbol}</p>
+                                        <p className="small">Price: $ {coin.priceUsd}</p>
+                                        <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
+                                        <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
+                                            More</a></p>
+                                        <Card.Text>{coin.description}</Card.Text>
+                                        {Auth.loggedIn() && (
+                                            <Button
+                                                disabled={savedCoinIds?.some(
+                                                    (savedId) => savedId === coin.coinId
+                                                )}
+                                                className="btn-block btn-info"
+                                                onClick={() => handleSaveCoin(coin.coinId)}
+                                            >
+                                                {savedCoinIds?.some((savedId) => savedId === coin.coinId)
+                                                    ? 'Coin Already Saved!'
+                                                    : 'Save This Coin!'}
+                                            </Button>
+                                        )}
+                                    </Card.Body>
+                                </Card>
+                            );
+                        })}
+
+                        {/* </CardColumns> */}
+                    </div>
+                </Container>
+            </>
+        );
+    }
 };
 
 export default SearchCoins;

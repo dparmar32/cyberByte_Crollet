@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="Gradient color for the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/SearchCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SearchCoins.js" afterDir="false" />
     </list>

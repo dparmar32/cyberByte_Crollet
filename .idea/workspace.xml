@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ed6ff00c-4488-44a9-b159-a82b9c79a83b" name="Changes" comment="Gradient color for the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/SignupForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/SignupForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SavedCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SavedCoins.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/SearchCoins.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SearchCoins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/localStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/localStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/connection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/Book.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/schemas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/schemas/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/schemas/typeDefs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/schemas/typeDefs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/seeders/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/seeders/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +65,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -119,7 +105,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Jonathan" />
+                        <option value="drashtee" />
                       </list>
                     </value>
                   </entry>

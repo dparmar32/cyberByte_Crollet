@@ -29,8 +29,7 @@ const SearchCoins = () => {
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
 
 
-    // set up useEffect hook to save `savedCoinIds` list to localStorage on component unmount
-    // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
+
     useEffect(() => {
         return () => saveCoinIds(savedCoinIds);
     });
@@ -62,7 +61,7 @@ const SearchCoins = () => {
                 changePercent24Hr: coin.changePercent24Hr,
                 explorer: coin.explorer,
 
-                // priceUsd: coin.volumeInfo.priceUsd.thumbnail || '',
+            
             }));
 
             setSearchedCoins(coinData);
@@ -98,7 +97,6 @@ const SearchCoins = () => {
         <>
             <Jumbotron fluid className="gradient text-light">
                 <Container>
-                    {/* <h1>Search for Crypto!</h1> */}
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Row>
                             <Col xs={12} md={8}>
@@ -136,11 +134,12 @@ const SearchCoins = () => {
                                               alt={`The symbol for ${coin.name}`}
                                               variant="top"
                                     />
-                                ) : null}
-                                <Card.Body className="card1">
+                                ):null }
+
+                                <Card.Body className="card1 ">
                                     <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
-                                    <p className="small">Symbol: {coin.symbol}</p>
+                                    <p className="small"><span class= "labels">Symbol:</span> {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
                                     <p className="small button button:hover button:click"><a href={coin.explorer}>Learn

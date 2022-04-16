@@ -129,7 +129,7 @@ const SavedCoins = () => {
                                     <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
                                         More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    <div class="btn-group btn-size" role="group" aria-label="Basic example">
                                         <Button
                                             className="btn btn-danger btn-sm active left align"
                                             onClick={() => handleDeleteCoin(coin.coinId)}>

@@ -21,10 +21,6 @@ import { useState } from 'react';
 import { CART_COIN } from '../utils/mutations';
 
 
-// const cartCoins = () => {
-//     const [cartItems, setCartItems] = useMutation(CART_COIN);
-// }
-
 
 const SavedCoins = () => {
     const { loading, data } = useQuery(QUERY_ME);
@@ -75,27 +71,8 @@ const SavedCoins = () => {
                         }:`
                         : 'Cart is Empty!'}
             </h5>
-            {/* <div>
-                    {cartItems.length === 0 && <div>Cart is empty</div>}
-                    {cartItems.map((item) => (
-                    <div key={item.id} className="row">
-                        <div className="col-2">{item.name}</div>
-                      <div className="col-2">
-                        <button onClick={() => onRemove(item)} className="remove">
-                            -
-                        </button>{' '}
-                        <button onClick={() => onAdd(item)} className="add">
-                            +
-                        </button>
-                      </div>
 
-                        <div className="col-2 text-right">
-                        {item.qty} x ${item.price.toFixed(2)}
-                        </div>
-                    </div>
-                    ))}
-                </div> */}
-            </aside>
+    </aside>
 
 
     {/* Save Crypto container */}

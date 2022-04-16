@@ -77,8 +77,9 @@ h5 {
   background-color: #dee1e9;
   color: #15806a;
   font-size: 20px;
+  }
+
   
-}
 img.small {
   max-width: 8rem;
   display: block;
@@ -173,24 +174,3 @@ aside {
   float: right;
 }
 
-
-
-
-
-/* @media (min-width: 576px) {
-  .card-columns {
-    column-count: 1;
-  }
-}
-
-@media (min-width: 768px) {
-  .card-columns {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 992px) {
-  .card-columns {
-    column-count: 3;
-  }
-} */

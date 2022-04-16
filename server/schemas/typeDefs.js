@@ -70,14 +70,8 @@ const typeDefs = gql`
     savedCoins(coinData: coinInput!): User
     removeCoin(coinId: ID!): User
     addUser(name: String!, email: String!, password: String!): Auth
-<<<<<<< HEAD
-    saveBook(bookData: BookInput!): User
-    removeBook(bookId: ID!): User
->>>>>>> 41927253eaffb3ab2963cc642f1ac3ec3cee14d7
-=======
     saveCoin(coinData: CoinInput!): User
     removeCoin(coinId: ID!): User
->>>>>>> 0c25341b6ae6ed62759686e46fb4adcc387852b4
   }
 `;
 

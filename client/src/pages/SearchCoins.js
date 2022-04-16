@@ -30,54 +30,6 @@ const SearchCoins = () => {
 
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
 
-
-
-
-    // async function pullfromApi(event){
-    //     event.preventDefault();
-    //     let api = `https://api.coincap.io/v2/assets/`
-    //     try {
-    //         const response = await fetch(api);
-    //         console.log("hello");
-    //         //   const request = await axios.get(api);
-    //         const {data} = await response.json()
-    //         console.log(data);
-    //     }catch(error){
-    //         console.log(error);
-    //     }
-    // }
-    // const myArr = JSON.parse(api);
-
-    //console.log(api);
-    // make a fetch request to get data store it in state react
-
-    // const [saveCoin, { error }] = useMutation(SAVE_BOOK);
-// useEffect(()=>{
-    // cryptoSearchApi();
-
-// })
-
-    // set up useEffect hook to save `savedCoinIds` list to localStorage on component unmount
-    // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-    // useEffect(() => {
-    // return () => saveCoinIds(savedCoinIds);
-    // return cryptoSearchApi();
-    // });
-
-    // const cryptoSearchApi = async () => {
-    //   await setSearchInput('bitcoin');
-
-    //   fetch(api)
-    //   .then((res) => {
-    //     res.json
-    //   })
-    //   .then((data) => {
-    //     console.log(data.data)
-    //   })
-    // }
-
-    // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
-    // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
     useEffect(() => {
         return () => saveCoinIds(savedCoinIds);
     });
@@ -90,7 +42,7 @@ const SearchCoins = () => {
         }
 
         try {
-            // const fixedResponse = await fetch(`https://api.coincap.io/v2/assets?limit=10`)
+
 
             const response = await fetch (`https://api.coincap.io/v2/assets?search=${searchInput}`)
 
@@ -100,14 +52,10 @@ const SearchCoins = () => {
 
             const { data } = await response.json();
 
-            // const { fixedData } = await response.json();
+
 
             const coinData = data.map((coin) => ({
-                // coinId: coin.id,
-                // rank: coin.rank,
-                // symbol: coin.symbol,
-                // name: coin.name,
-                // priceUsd: coin.priceUsd
+
 
                 coinId: coin.id,
                 rank: coin.rank || ['No rank to display'],
@@ -117,7 +65,7 @@ const SearchCoins = () => {
                 changePercent24Hr : coin.changePercent24Hr,
                 explorer: coin.explorer,
 
-                // priceUsd: coin.volumeInfo.priceUsd.thumbnail || '',
+               
             }));
 
             setSearchedCoins(coinData);
@@ -177,7 +125,6 @@ const SearchCoins = () => {
                 </Container>
             </Jumbotron>
             <Container>
-                {/* <h2>Hello!</h2> */}
                 <CardColumns>
                     {searchedCoins.map((coin) => {
                         return (

@@ -47,7 +47,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-// when we query a user, we'll also get another field called `coinCount` with the number of saved books we have
+// when we query a user, we'll also get another field called `coinCount` with the number of saved coins we have
 userSchema.virtual('coinCount').get(function () {
     return this.savedCoins.length;
 });

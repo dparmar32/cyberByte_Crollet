@@ -11,7 +11,6 @@ import {setContext} from '@apollo/client/link/context';
 
 import SearchCoins from './pages/SearchCoins';
 import SavedCoins from './pages/SavedCoins';
-// import Home from './pages/Home';
 import Dashboard from './components/Dashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -50,12 +49,8 @@ function App() {
                 <>
                     <Navbar/>
                     <Switch>
-
-                        {/*<Route exact path="/" component={SearchBooks} />*/}
                         <Route exact path="/search" component={SearchCoins}/>
-                        {/* <Route exact path="/saved" component={SavedBooks} /> */}
                         <Route exact path="/saved" component={SavedCoins}/>
-                        {/* <Route render={() => <h1 className="display-2">Wrong page!</h1>} /> */}
                     </Switch>
                     <Route exact path="/" component={Dashboard}/>
                     <Footer/>

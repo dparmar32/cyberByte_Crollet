@@ -52,7 +52,7 @@ const typeDefs = gql`
     changePercent24Hr: Number
     vwap24Hr: Number
 
-  input CoinInput {
+  input coinInput {
     rank: String
     symbol: String
     coinId: String!
@@ -70,7 +70,7 @@ const typeDefs = gql`
     savedCoins(coinData: coinInput!): User
     removeCoin(coinId: ID!): User
     addUser(name: String!, email: String!, password: String!): Auth
-    saveCoin(coinData: CoinInput!): User
+    saveCoin(coinData: coinInput!): User
     removeCoin(coinId: ID!): User
   }
 `;

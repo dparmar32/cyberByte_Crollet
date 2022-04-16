@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_COIN = gql`
-  mutation saveCoin($coinData: CoinInput!) {
+  mutation saveCoin($coinData: coinInput!) {
     saveCoin(coinData: $coinData) {
       _id
       name

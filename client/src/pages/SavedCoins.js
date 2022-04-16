@@ -7,18 +7,18 @@ import {
     Button,
 } from 'react-bootstrap';
 
-import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_ME, QUERY_ME2 } from '../utils/queries';
-import { REMOVE_COIN } from '../utils/mutations';
-import { removeCoinId } from '../utils/localStorage';
+import {useQuery, useMutation} from '@apollo/client';
+import {QUERY_ME, QUERY_ME2} from '../utils/queries';
+import {REMOVE_COIN} from '../utils/mutations';
+import {removeCoinId} from '../utils/localStorage';
 
 import Auth from '../utils/auth';
 
 import Cart from '../cart.png';
 
 import Basket from '../components/Basket'
-import { useState } from 'react';
-import { CART_COIN } from '../utils/mutations';
+import {useState} from 'react';
+import {CART_COIN} from '../utils/mutations';
 
 
 // const cartCoins = () => {
@@ -27,8 +27,8 @@ import { CART_COIN } from '../utils/mutations';
 
 
 const SavedCoins = () => {
-    const { loading, data } = useQuery(QUERY_ME);
-    const [removeCoin, { error }] = useMutation(REMOVE_COIN);
+    const {loading, data} = useQuery(QUERY_ME);
+    const [removeCoin, {error}] = useMutation(REMOVE_COIN);
 
     const userData = data?.me || {};
 
@@ -40,16 +40,16 @@ const SavedCoins = () => {
         if (!token) {
             return false;
         }
-        
+
         try {
-          const { data } = await removeCoin({
-            variables: { coinId },
-          });
-        
-          // upon success, remove coin's id from localStorage
-          removeCoinId(coinId);
+            const {data} = await removeCoin({
+                variables: {coinId},
+            });
+
+            // upon success, remove coin's id from localStorage
+            removeCoinId(coinId);
         } catch (err) {
-          console.error(err);
+            console.error(err);
         }
     };
 
@@ -58,24 +58,24 @@ const SavedCoins = () => {
     }
 
     return (
-     
+
         <>
             <Jumbotron fluid className="gradient text-light">
                 <Container>
                     <h1>Viewing {userData.name}'s saved Cryptos!</h1>
                 </Container>
             </Jumbotron>
-    {/* Cart Items */}
+            {/* Cart Items */}
             <aside className="block2 col-3">
-            <h3>Cart Items</h3>
-            <h5>
+                <h3>Cart Items</h3>
+                <h5>
                     {userData.cartCoins?.length
                         ? ` Viewing ${userData.cartCoins.length} saved ${
                             userData.cartCoins.length === 1 ? 'Crypto' : 'Cryptos'
                         }:`
                         : 'Cart is Empty!'}
-            </h5>
-            {/* <div>
+                </h5>
+                {/* <div>
                     {cartItems.length === 0 && <div>Cart is empty</div>}
                     {cartItems.map((item) => (
                     <div key={item.id} className="row">
@@ -98,35 +98,36 @@ const SavedCoins = () => {
             </aside>
 
 
-    {/* Save Crypto container */}
+            {/* Save Crypto container */}
             <Container className="block col-13">
-             <h3>
+                <h3>
                     {userData.savedCoins?.length
                         ? ` Viewing ${userData.savedCoins.length} saved ${
                             userData.savedCoins.length === 1 ? 'Crypto' : 'Cryptos'
                         }:`
                         : 'You have no saved any Cryptos!'}
-             </h3>
-             
-       
+                </h3>
+
+
                 <CardColumns>
                     {userData.savedCoins?.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
                                     <Card.Img className="small"
-                                    src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                    alt={`The symbol for ${coin.name}`}
-                                        variant="top"
+                                              src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                              alt={`The symbol for ${coin.name}`}
+                                              variant="top"
                                     />
                                 ) : null}
                                 <Card.Body className="card1">
-                                <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
+                                    <Card.Title><h3><strong>{coin.name}</strong></h3></Card.Title>
                                     <p className="small">Rank: # {coin.rank}</p>
                                     <p className="small">Symbol: {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
+                                        More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     <div class="btn-group btn-size" role="group" aria-label="Basic example">
                                         <Button
@@ -135,7 +136,9 @@ const SavedCoins = () => {
                                             Delete this Crypto!
                                         </Button>
                                         <Button
-                                            className='btn btn-info btn-sm active right align'><img src={Cart} width="60" alt="cart"></img>
+                                            className='btn btn-info btn-sm active right align'><img src={Cart}
+                                                                                                    width="60"
+                                                                                                    alt="cart"></img>
                                         </Button>
                                     </div>
                                 </Card.Body>

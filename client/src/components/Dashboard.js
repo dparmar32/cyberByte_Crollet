@@ -85,7 +85,7 @@ return (
     <h2>
       Here are the top ten cryptocurrencies!
     </h2>
-    <p className='ptitle'>If you are interted in investing in crpto coins, we are inviting you to search for more crytos' information.</p>
+    <p className="dashboard-text">If you are interested in investing in crypto coins, we are inviting you to search for more crytos' information.</p>
                 {/* <h2>
                     {topFiveCoinState.length
                         ? '${searchedCoins.length} results:'

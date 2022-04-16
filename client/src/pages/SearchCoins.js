@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Jumbotron,
     Container,
@@ -7,16 +7,15 @@ import {
     Button,
     Card,
     CardColumns,
-    
-   } from 'react-bootstrap';
 
-import { useMutation } from '@apollo/client';
-import { SAVE_COIN } from '../utils/mutations';
-import { saveCoinIds, getSavedCoinIds } from '../utils/localStorage';
+} from 'react-bootstrap';
+
+import {useMutation} from '@apollo/client';
+import {SAVE_COIN} from '../utils/mutations';
+import {saveCoinIds, getSavedCoinIds} from '../utils/localStorage';
 
 
 import Auth from '../utils/auth';
-// import Axios from 'axios'
 
 const SearchCoins = () => {
     // create state for holding returned Cryto api data
@@ -30,52 +29,7 @@ const SearchCoins = () => {
     const [saveCoin, {error}] = useMutation(SAVE_COIN);
 
 
-
-
-    // async function pullfromApi(event){
-    //     event.preventDefault();
-    //     let api = `https://api.coincap.io/v2/assets/`
-    //     try {
-    //         const response = await fetch(api);
-    //         console.log("hello");
-    //         //   const request = await axios.get(api);
-    //         const {data} = await response.json()
-    //         console.log(data);
-    //     }catch(error){
-    //         console.log(error);
-    //     }
-    // }
-    // const myArr = JSON.parse(api);
-
-    //console.log(api);
-    // make a fetch request to get data store it in state react
-
-    // const [saveCoin, { error }] = useMutation(SAVE_BOOK);
-// useEffect(()=>{
-    // cryptoSearchApi();
-
-// })
-
     // set up useEffect hook to save `savedCoinIds` list to localStorage on component unmount
-    // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
-    // useEffect(() => {
-    // return () => saveCoinIds(savedCoinIds);
-    // return cryptoSearchApi();
-    // });
-
-    // const cryptoSearchApi = async () => {
-    //   await setSearchInput('bitcoin');
-
-    //   fetch(api)
-    //   .then((res) => {
-    //     res.json
-    //   })
-    //   .then((data) => {
-    //     console.log(data.data)
-    //   })
-    // }
-
-    // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
     // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
     useEffect(() => {
         return () => saveCoinIds(savedCoinIds);
@@ -90,8 +44,6 @@ const SearchCoins = () => {
 
         try {
             const response = await fetch(
-                // `https://www.googleapis.com/coins/v1/volumes?q=${searchInput}`
-                // `api.coincap.io/v2/assets/?q=${{id}}`
                 `https://api.coincap.io/v2/assets?search=${searchInput}`
             );
 
@@ -99,21 +51,15 @@ const SearchCoins = () => {
                 throw new Error('something went wrong!');
             }
 
-            const { data } = await response.json();
+            const {data} = await response.json();
 
             const coinData = data.map((coin) => ({
-                // coinId: coin.id,
-                // rank: coin.rank,
-                // symbol: coin.symbol,
-                // name: coin.name,
-                // priceUsd: coin.priceUsd
-
                 coinId: coin.id,
                 rank: coin.rank || ['No rank to display'],
                 symbol: coin.symbol,
                 name: coin.name,
                 priceUsd: coin.priceUsd,
-                changePercent24Hr : coin.changePercent24Hr,
+                changePercent24Hr: coin.changePercent24Hr,
                 explorer: coin.explorer,
 
                 // priceUsd: coin.volumeInfo.priceUsd.thumbnail || '',
@@ -139,13 +85,13 @@ const SearchCoins = () => {
         }
 
         try {
-          const { data } = await saveCoin({
-            variables: { coinData: { ...coinToSave } },
-          });
-          console.log(savedCoinIds);
-          setSavedCoinIds([...savedCoinIds, coinToSave.coinId]);
+            const {data} = await saveCoin({
+                variables: {coinData: {...coinToSave}},
+            });
+            console.log(savedCoinIds);
+            setSavedCoinIds([...savedCoinIds, coinToSave.coinId]);
         } catch (err) {
-          console.error(err);
+            console.error(err);
         }
     };
     return (
@@ -175,7 +121,7 @@ const SearchCoins = () => {
                 </Container>
             </Jumbotron>
             <Container>
-                <h2>
+                <h2 className="dashboard-container">
                     {searchedCoins.length
                         ? `${searchedCoins.length} results:`
                         : 'Welcome to CyberByte Crollet! Search for Crypto to begin'}
@@ -186,10 +132,9 @@ const SearchCoins = () => {
                             <Card key={coin.coinId} border="dark">
                                 {coin.symbol ? (
                                     <Card.Img className="small"
-                                        src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
-                                        // alt={`The symbol for ${coin.name}`}
-                                        onerror="this.src='/Users/shadae/bootcamp/projects/cyberByte_Crollet/client/src/dollar-coin-vector-1953442.jpeg'"
-                                        variant="top"
+                                              src={`https://assets.coincap.io/assets/icons/${coin.symbol.toLowerCase()}@2x.png`}
+                                              alt={`The symbol for ${coin.name}`}
+                                              variant="top"
                                     />
                                 ):null }
 
@@ -199,20 +144,21 @@ const SearchCoins = () => {
                                     <p className="small"><span class= "labels">Symbol:</span> {coin.symbol}</p>
                                     <p className="small">Price: $ {coin.priceUsd}</p>
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
-                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
+                                    <p className="small button button:hover button:click"><a href={coin.explorer}>Learn
+                                        More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
                                     {Auth.loggedIn() && (
-                                      <Button
-                                        disabled={savedCoinIds?.some(
-                                          (savedId) => savedId === coin.coinId
-                                        )}
-                                        className="btn-block btn-info"
-                                        onClick={() => handleSaveCoin(coin.coinId)}
-                                      >
-                                        {savedCoinIds?.some((savedId) => savedId === coin.coinId)
-                                          ? 'Coin Already Saved!'
-                                          : 'Save This Coin!'}
-                                      </Button>
+                                        <Button
+                                            disabled={savedCoinIds?.some(
+                                                (savedId) => savedId === coin.coinId
+                                            )}
+                                            className="btn-block btn-info"
+                                            onClick={() => handleSaveCoin(coin.coinId)}
+                                        >
+                                            {savedCoinIds?.some((savedId) => savedId === coin.coinId)
+                                                ? 'Coin Already Saved!'
+                                                : 'Save This Coin!'}
+                                        </Button>
                                     )}
                                 </Card.Body>
                             </Card>

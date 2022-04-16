@@ -31,3 +31,5 @@ module.exports = {
         return jwt.sign({data: payload}, secret, {expiresIn: expiration});
     },
 };
+
+// signToken function

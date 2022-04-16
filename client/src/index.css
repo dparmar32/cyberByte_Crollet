@@ -41,6 +41,7 @@ h5 {
   background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: relative;
+  
 }
 
 .gradient3 {
@@ -52,6 +53,27 @@ h5 {
 
 }
 
+.flex-row {
+  display:flex;  
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  padding-bottom: 15px;
+  
+}
+
+.card {  
+  width: 350px;
+}
+
+.space-between {
+  justify-content: space-evenly;
+  
+}
+
+.my-2 {
+  margin-top: var(--spacing-two);
+  margin-bottom: var(--spacing-two);
+}
 
 .fluid {
   background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
@@ -74,6 +96,7 @@ h5 {
   background-color: #dee1e9;
   color: #15806a;
   font-size: 20px;
+  
   
 }
 img.small {
@@ -100,10 +123,12 @@ a {
   background-color: #04AA6D;
   border: none;
   border-radius: 5px;
-  /* box-shadow: 0 5px #999; */
+  
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {
+  opacity: .8;
+}
 
 .button:active {
   background-color: #3e8e41;
@@ -111,14 +136,33 @@ a {
   transform: translateY(4px);
 }
 
-btn-group {
-  padding-left: 10px ;
-  padding-right: 10px ;
+.btn-danger{
+  height: 50px;
+  width: 182px;
+  margin-right: 5px;
+  border-radius: 5px;
 }
+
+
+.btn-danger:hover {
+  opacity: .8;
+
+}
+
+.btn-info {
+  border-radius: 5px;
+
+}
+
+.btn-info:hover {
+  opacity: .8;
+
+}
+
 
 /* Cart */
 .row {
-  display: flex;
+  display:flex;
   justify-content: space-between;
 }
 

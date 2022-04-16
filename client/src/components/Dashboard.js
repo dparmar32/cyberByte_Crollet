@@ -82,16 +82,12 @@ const topFiveCoins = async () => {
 return (
 
   <Container>
+      
     <h2>
       Here are the top ten cryptocurrencies!
     </h2>
-    <p>If you are interted in investing in crpto coins, we are inviting you to search for more crytos' information.</p>
-                {/* <h2>
-                    {topFiveCoinState.length
-                        ? '${searchedCoins.length} results:'
-                        : 'hello'}
-                </h2> */}
-                <CardColumns>
+    <p>If you are interted in investing in crypto coins, we are inviting you to search for more crytos' information.</p>
+                <div className="flex-row space-between">
                     {topFiveCoinState.map((coin) => {
                         return (
                             <Card key={coin.coinId} border="dark">
@@ -115,8 +111,9 @@ return (
                             </Card>
                         );
                     })}
-                </CardColumns>
-            </Container>
+                </div>
+                {/* <p></p> */}
+    </Container>
 
 )
 

@@ -128,16 +128,16 @@ const SavedCoins = () => {
                                     <p className="small">Change Percentage: {coin.changePercent24Hr}</p>
                                     <p className="small button button:hover button:click"><a href={coin.explorer}>Learn More</a></p>
                                     <Card.Text>{coin.description}</Card.Text>
-                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                    {/* <div class="btn-group" role="group" aria-label="Basic example"> */}
                                         <Button
-                                            className="btn btn-danger btn-sm active left align"
+                                            className="btn btn-danger btn-sm active center"
                                             onClick={() => handleDeleteCoin(coin.coinId)}>
                                             Delete this Crypto!
                                         </Button>
                                         <Button
-                                            className='btn btn-info btn-sm active right align'><img src={Cart} width="60" alt="cart"></img>
+                                            className="btn btn-info btn-sm active center"><img src={Cart} width="40" alt="cart"></img>
                                         </Button>
-                                    </div>
+                                    {/* </div> */}
                                 </Card.Body>
                             </Card>
                         );
